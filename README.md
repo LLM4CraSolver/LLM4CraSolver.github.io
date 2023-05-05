@@ -1,1 +1,1 @@
-# ChatGPT4Cradx.github.io
+# ChatGPT4CraDX.github.io
