@@ -34,4 +34,4 @@ bugs?
 
 – RQ3.b (Generalizability of IntDiagSolver): To what extent can the effectiveness of IntDiagSolver in crash bug resolution be generalized across different LLMs?
 
-[RQ3_b_result](https://github.com/ChatGPT4CraDiag/ChatGPT4CraDiag.github.io/blob/main/Result/rq3_b_result), the experimental results of generalizability of IntDiagSolver on the 41 crash bugs benchmark.
+[rq3_b_result](https://github.com/ChatGPT4CraDiag/ChatGPT4CraDiag.github.io/blob/main/Result/rq3_b_result), the experimental results of generalizability of IntDiagSolver on the 41 crash bugs benchmark.
