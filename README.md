@@ -1,4 +1,4 @@
-# ChatGPT4CraDiag.github.io
+# Exploring ChatGPT’s Ability in Resolving Crash Bugs: Localizing and Repairing
 
 ## Benchmark
 
@@ -16,15 +16,22 @@ We focus on crash bugs in the Java programs given their high prevalence. To cons
 
 We focus on how effective ChatGPT is in localizing and repairing crash bugs, including both the code-related crash bugs and the environment-related crash bugs. Our study answer the following two research questions:
 
-**RQ1**: To what extent can ChatGPT be used for error
-localization and fixing in software crash bug diagnosis?
+**RQ1**: How effective is ChatGPT in locating and repairing code-related and environment-related crash bugs with the basic prompt?
 
-[rq1_result](https://github.com/ChatGPT4CraDiag/ChatGPT4CraDiag.github.io/blob/main/Result/benchmark_100_result.json), the experimental results of RQ1 on the 100 crash bugs benchmark.
+[rq1_result](https://github.com/ChatGPT4CraDiag/ChatGPT4CraDiag.github.io/blob/main/Result/rq1_result.json), the experimental results of RQ1 on the 100 crash bugs benchmark.
 
-**RQ2**: How can the interaction with ChatGPT be optimized to improve the accuracy and efficiency of software crash bug diagnosis?
+**RQ2**: How can advanced prompts improve ChatGPT’s capability of
+resolving crash bugs?
 
-The experimental result of RQ2 are listed in the paper. 
+The experimental result of RQ2 are listed in the paper.
 
-Based on the experimental results and research findings, we propose IntDiag-ChatGPT, a novel approach for diagnosing crash bugs by interacting with ChatGPT in a continuous manner. 
+**RQ3**: How well does IntDiagSolver perform in resolving crash
+bugs?
 
-[final_result](https://github.com/ChatGPT4CraDiag/ChatGPT4CraDiag.github.io/blob/main/Result/benchmark_41_result.json). We evaluate it on the 41 crash bugs benchmark to validate the effectiveness of our proposed approach.
+– RQ3.a (Effectiveness of IntDiagSolver): To what extent can IntDiagSolver effectively resolve crash bugs?
+
+[rq3_a_result](https://github.com/ChatGPT4CraDiag/ChatGPT4CraDiag.github.io/blob/main/Result/rq3_a_result.json), the experimental results of effectiveness of IntDiagSolver on the 41 crash bugs benchmark.
+
+– RQ3.b (Generalizability of IntDiagSolver): To what extent can the effectiveness of IntDiagSolver in crash bug resolution be generalized across different LLMs?
+
+[RQ3_b_result](https://github.com/ChatGPT4CraDiag/ChatGPT4CraDiag.github.io/blob/main/Result/rq3_b_result), the experimental results of generalizability of IntDiagSolver on the 41 crash bugs benchmark.
