@@ -1,4 +1,4 @@
-# Exploring ChatGPT’s Ability in Resolving Crash Bugs: Localizing and Repairing
+# Exploring Large Language Models in Resolving Crash Bugs: Localizing and Repairing
 
 ## Benchmark
 
@@ -14,19 +14,15 @@ We focus on crash bugs in the Java programs given their high prevalence. To cons
 
 ## Result
 
-We focus on how effective ChatGPT is in localizing and repairing crash bugs, including both the code-related crash bugs and the environment-related crash bugs. Our study answer the following two research questions:
-
-**RQ1**: How effective is ChatGPT in locating and repairing code-related and environment-related crash bugs with the basic prompt?
+**RQ1 (Basic Prompt Effectiveness)**: To what extent can ChatGPT, utilizing basic prompts with varying levels of contextual information, accurately localize and repair both code-related and environment-related crash bugs?
 
 [rq1_result](https://github.com/ChatGPT4CraDiag/ChatGPT4CraDiag.github.io/blob/main/Result/rq1_result.json), the experimental results of RQ1 on the 100 crash bugs benchmark.
 
-**RQ2**: How can advanced prompts improve ChatGPT’s capability of
-resolving crash bugs?
+**RQ2 (Enhancing Resolution with Advanced Prompts)**: In what ways do advanced prompts enhance ChatGPT’s ability to resolve crash bugs more effectively?
 
 The experimental result of RQ2 are listed in the paper.
 
-**RQ3**: How well does IntDiagSolver perform in resolving crash
-bugs?
+**RQ3(Evaluation of IntDiagSolver)**: How effectively does IntDiagSolver perform in resolving crash bugs?
 
 – RQ3.a (Effectiveness of IntDiagSolver): To what extent can IntDiagSolver effectively resolve crash bugs?
 
