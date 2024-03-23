@@ -22,7 +22,7 @@ We focus on crash bugs in the Java programs given their high prevalence. To cons
 
 The experimental result of RQ2 are listed in the paper.
 
-**RQ3(Evaluation of IntDiagSolver)**: How effectively does IntDiagSolver perform in resolving crash bugs?
+**RQ3 (Evaluation of IntDiagSolver)**: How effectively does IntDiagSolver perform in resolving crash bugs?
 
 – RQ3.a (Effectiveness of IntDiagSolver): To what extent can IntDiagSolver effectively resolve crash bugs?
 
