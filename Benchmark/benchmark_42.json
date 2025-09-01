@@ -1,0 +1,828 @@
+[
+    {
+        "id": "77364550",
+        "title": "AttributeError: module 'pkgutil' has no attribute 'ImpImporter'. Did you mean: 'zipimporter'?",
+        "time": "2023-10-26 06:22:24Z",
+        "type": "non-code",
+        "language": "python",
+        "code line": 6,
+        "code length": 194,
+        "question length": 5442,
+        "question without crash length": 1274,
+        "Buggy Code": [
+            "py -m venv pyspedas\n.\\pyspedas\\Scripts\\activate\npip install pyspedas",
+            "Collecting pywavelets (from pyspedas)\n  Using cached PyWavelets-1.4.1.tar.gz (4.6 MB)\n  Installing build dependencies ... done"
+        ],
+        "Crash Information": [
+            "Collecting pyspedas\n  Using cached pyspedas-1.4.47-py3-none-any.whl.metadata (14 kB)\nCollecting numpy>=1.19.5 (from pyspedas)\n  Using cached numpy-1.26.1-cp312-cp312-win_amd64.whl.metadata (61 kB)\nCollecting requests (from pyspedas)\n  Using cached requests-2.31.0-py3-none-any.whl.metadata (4.6 kB)\nCollecting geopack>=1.0.10 (from pyspedas)\n  Using cached geopack-1.0.10-py3-none-any.whl (114 kB)\nCollecting cdflib<1.0.0 (from pyspedas)\n  Using cached cdflib-0.4.9-py3-none-any.whl (72 kB)\nCollecting cdasws>=1.7.24 (from pyspedas)\n  Using cached cdasws-1.7.43.tar.gz (21 kB)\n  Installing build dependencies ... done\n  Getting requirements to build wheel ... done\n  Preparing metadata (pyproject.toml) ... done\nCollecting netCDF4>=1.6.2 (from pyspedas)\n  Using cached netCDF4-1.6.5-cp312-cp312-win_amd64.whl.metadata (1.8 kB)\nCollecting pywavelets (from pyspedas)\n  Using cached PyWavelets-1.4.1.tar.gz (4.6 MB)\n  Installing build dependencies ... done\n  Getting requirements to build wheel ... error\n  error: subprocess-exited-with-error\n\n  × Getting requirements to build wheel did not run successfully.\n  │ exit code: 1\n  ╰─> [33 lines of output]\n      Traceback (most recent call last):\n        File \"C:\\Users\\UserName\\pyspedas\\Lib\\site-packages\\pip\\_vendor\\pyproject_hooks\\_in_process\\_in_process.py\", line 353, in <module>\n          main()\n        File \"C:\\Users\\UserName\\pyspedas\\Lib\\site-packages\\pip\\_vendor\\pyproject_hooks\\_in_process\\_in_process.py\", line 335, in main\n          json_out['return_val'] = hook(**hook_input['kwargs'])\n                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        File \"C:\\Users\\UserName\\pyspedas\\Lib\\site-packages\\pip\\_vendor\\pyproject_hooks\\_in_process\\_in_process.py\", line 112, in get_requires_for_build_wheel\n          backend = _build_backend()\n                    ^^^^^^^^^^^^^^^^\n        File \"C:\\Users\\UserName\\pyspedas\\Lib\\site-packages\\pip\\_vendor\\pyproject_hooks\\_in_process\\_in_process.py\", line 77, in _build_backend\n          obj = import_module(mod_path)\n                ^^^^^^^^^^^^^^^^^^^^^^^\n        File \"C:\\Users\\UserName\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\__init__.py\", line 90, in import_module\n          return _bootstrap._gcd_import(name[level:], package, level)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        File \"<frozen importlib._bootstrap>\", line 1381, in _gcd_import\n        File \"<frozen importlib._bootstrap>\", line 1354, in _find_and_load\n        File \"<frozen importlib._bootstrap>\", line 1304, in _find_and_load_unlocked\n        File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n        File \"<frozen importlib._bootstrap>\", line 1381, in _gcd_import\n        File \"<frozen importlib._bootstrap>\", line 1354, in _find_and_load\n        File \"<frozen importlib._bootstrap>\", line 1325, in _find_and_load_unlocked\n        File \"<frozen importlib._bootstrap>\", line 929, in _load_unlocked\n        File \"<frozen importlib._bootstrap_external>\", line 994, in exec_module\n        File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n        File \"C:\\Users\\UserName\\AppData\\Local\\Temp\\pip-build-env-_lgbq70y\\overlay\\Lib\\site-packages\\setuptools\\__init__.py\", line 16, in <module>\n          import setuptools.version\n        File \"C:\\Users\\UserName\\AppData\\Local\\Temp\\pip-build-env-_lgbq70y\\overlay\\Lib\\site-packages\\setuptools\u000bersion.py\", line 1, in <module>\n          import pkg_resources\n        File \"C:\\Users\\UserName\\AppData\\Local\\Temp\\pip-build-env-_lgbq70y\\overlay\\Lib\\site-packages\\pkg_resources\\__init__.py\", line 2191, in <module>\n          register_finder(pkgutil.ImpImporter, find_on_path)\n                          ^^^^^^^^^^^^^^^^^^^\n      AttributeError: module 'pkgutil' has no attribute 'ImpImporter'. Did you mean: 'zipimporter'?\n      [end of output]\n\n  note: This error originates from a subprocess, and is likely not a problem with pip.\nerror: subprocess-exited-with-error\n\n× Getting requirements to build wheel did not run successfully.\n│ exit code: 1\n╰─> See above for output.\n\nnote: This error originates from a subprocess, and is likely not a problem with pip."
+        ],
+        "Crash Context": "Earlier I installed some packages likeMatplotlib,NumPy, pip (version 23.3.1), wheel (version 0.41.2), etc., and did some programming with those. I used the commandC:\\Users\\UserName>pip listto find the list of packages that I have installed, and I am using Python 3.12.0 (by employing codeC:\\Users\\UserName>py -V).I need to usepyspedasto analyse some data. I am following the instruction that that I received from site to install the package, with a variation (I am not sure whether it matters or not: I am usingpy, instead ofpython). The commands that I use, in the order, are:After the last step, I am getting the following output:After little bit of googling, I came to know that this issues was reported at multiple places, but none for this package. I did install wheel in the new environment as mentioned in the answerhere, but the problem still persists.Instead of setting up a virtual environment, I simply executed the commandpy -m pip install pyspedas. But I am still getting the error.What I could gather is that the program has an issue withI am usingIDLEin Windows 11.",
+        "Accepted Answer": "Due to the removal of the long-deprecated pkgutil.ImpImporter class, the pip command may not work forPython 3.12.You just have to manually install pip for Python 3.12python -m ensurepip --upgrade\npython -m pip install --upgrade setuptools\npython -m pip install <module>In your virtual environment:pip install --upgrade setuptoolsPython comes with anensurepip, which can install pip in a Python environment.https://pip.pypa.io/en/stable/installation/OnLinux/macOSterminal:python -m ensurepip --upgradeOnWindows:py -m ensurepip --upgradealso, make sure to upgrade pip:py -m pip install --upgrade pipTo install numpy on Python 3.12, you must use numpy version 1.26.4pip install numpy==1.26.4https://github.com/numpy/numpy/issues/23808#issuecomment-1722440746for Ubuntusudo apt install python3.12-devorpython3.12 -m pip install --upgrade setuptools",
+        "answer code line": 10,
+        "Accepted Answer length": 844
+    },
+    {
+        "id": "77213053",
+        "title": "Why did Flask start failing with \"ImportError: cannot import name 'url_quote' from 'werkzeug.urls'\"?",
+        "time": "2023-10-02 03:02:00Z",
+        "type": "non-code",
+        "language": "python",
+        "code line": 6,
+        "code length": 97,
+        "question length": 1787,
+        "question without crash length": 596,
+        "Buggy Code": [
+            "Python 3.10.11\nFlask==2.2.2",
+            "pip install pytest\npytest",
+            "from daat import app\n\napp.run(host='0.0.0.0')"
+        ],
+        "Crash Information": [
+            "==================================== ERRORS ====================================\n_____________ ERROR collecting tests/test_fiftyone_utils_utils.py ______________\nImportError while importing test module '/builds/kw/data-auto-analysis-toolkit-backend/tests/test_fiftyone_utils_utils.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/opt/conda/lib/python3.10/importlib/__init__.py:126: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\ntests/test_fiftyone_utils_utils.py:2: in <module>\n    import daat  # noqa: F401\n/opt/conda/lib/python3.10/site-packages/daat-1.0.0-py3.10.egg/daat/__init__.py:1: in <module>\n    from daat.app import app\n/opt/conda/lib/python3.10/site-packages/daat-1.0.0-py3.10.egg/daat/app/__init__.py:6: in <module>\n    from flask import Flask, jsonify, request\n/opt/conda/lib/python3.10/site-packages/flask/__init__.py:5: in <module>\n    from .app import Flask as Flask\n/opt/conda/lib/python3.10/site-packages/flask/app.py:30: in <module>\n    from werkzeug.urls import url_quote\nE   ImportError: cannot import name 'url_quote' from 'werkzeug.urls' (/opt/conda/lib/python3.10/site-packages/werkzeug/urls.py)"
+        ],
+        "Crash Context": "Environment:I run my Flask backend code in docker container, with BASE Image:FROM pytorch/pytorch:2.0.1-cuda11.7-cudnn8-runtimeBut when I run the pytest with versionpytest 7.4.2,it raised an Error, with logs:My codes works well when I directly run it withpython run.pyrun.pyshown belowI guess it should be the pytest versions issue, because it used to work well without changing any related code, and I usepip install pytestwithout defined a specific version.And my backend runs well without pytest.",
+        "Accepted Answer": "I had the same problem. It is becauseWerkzeug 3.0.0was released and Flask doesn't specify the dependency correctly (requirements saysWerkzeug>=2.2.0). This is why,Werkzeug 3.0.0is still installed andFlask 2.2.2isn't made forWerkzeug 3.0.0.Solution: Just set a fix version for Werkzeug such asWerkzeug==2.2.2in yourrequirements.txtand it should work.",
+        "answer code line": 0,
+        "Accepted Answer length": 349
+    },
+    {
+        "id": "78634235",
+        "title": "numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject",
+        "time": "2024-06-17 18:52:57Z",
+        "type": "non-code",
+        "language": "python",
+        "code line": 26,
+        "code length": 887,
+        "question length": 1430,
+        "question without crash length": 1256,
+        "Buggy Code": [
+            "import spacy\ndef text_recognizer(model_path, text):\ntry:\n    # Load the trained model\n    nlp = spacy.load(model_path)\n    print(\"Model loaded successfully.\")\n    \n    # Process the given text\n    doc = nlp(text)\n    ent_labels = [(ent.text, ent.label_) for ent in doc.ents]\n        return ent_labels",
+            "% Set up the Python environment\npe = pyenv;\npy.importlib.import_module('final_output');\n\n% Add the directory containing the Python script to the Python path\npath_add = fileparts(which('final_output.py'));\nif count(py.sys.path, path_add) == 0\n    insert(py.sys.path, int64(0), path_add);\nend\n% Define model path and text to process\nmodel_path = 'D:\trained_model\\\\output\\\\model-best';\ntext = 'Roses are red';\n% Call the Python function\npyOut = py.final_output.text_recognizer(model_path, text);\n% Convert the output to a MATLAB cell array\nentity_labels = cell(pyOut);\ndisp(entity_labels);"
+        ],
+        "Crash Information": [
+            "Error using numpy_ops>init thinc.backends.numpy_ops",
+            "ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject."
+        ],
+        "Crash Context": "I want to call my Python module from the Matlab. I received the error:Python Error:The Python script is as followsThe Matlab script is as followsI found one solution to update Numpy, what I did, but nothing changed. I am using Python 3.9 and Numpy version 2.0.0The error was received when I tried to call the Python module using a Matlab script.How can I fix the issue?",
+        "Accepted Answer": "The reason is thatpandasdefines itsnumpydependency freely as \"anything newer than certain version of numpy\".\nThe problem occured, whennumpy==2.0.0has been released on June 16th 2024, because it is no longer compatible with your pandas version.The solution is to pin down thenumpyversion to any before the2.0.0. Today it could be (this is the most recentnumpy 1release):numpy==1.26.4To be added in your requirements or to the pip command you use (but together with installing pandas).Nowadayspipis very flexible and can handle the issue flawesly. You just need to ask it to install bothpandasandnumpyof given versions in the samepip installinvocation.",
+        "answer code line": 1,
+        "Accepted Answer length": 650
+    },
+    {
+        "id": "77507580",
+        "title": "UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown plt.show()",
+        "time": "2023-11-18 15:40:11Z",
+        "type": "non-code",
+        "language": "python",
+        "code line": 22,
+        "code length": 763,
+        "question length": 1168,
+        "question without crash length": 920,
+        "Buggy Code": [
+            "import numpy as np\nimport matplotlib\nmatplotlib.use('Agg')\nimport matplotlib.pyplot as plt\n\n# Read data from file, skipping the first row (header)\ndata = np.loadtxt('cm.dat', skiprows=1)\n\n# Initialize reference point\nx0, y0, z0 = data[0]\n\n# Compute squared displacement for each time step\nSD = [(x - x0)**2 + (y - y0)**2 + (z - z0)**2 for x, y, z in data]\n\n# Compute the cumulative average of SD to get MSD at each time step\nMSD = np.cumsum(SD) / np.arange(1, len(SD) + 1)\n\n# Generate time steps\nt = np.arange(1, len(SD) + 1)\n\n# Create a log-log plot of MSD versus t\nplt.figure(figsize=(8, 6))\nplt.loglog(t, MSD, marker='o')\n\nplt.title('Mean Squared Displacement vs Time')\nplt.xlabel('Time step')\nplt.ylabel('MSD')\nplt.grid(True, which=\"both\", ls=\"--\")\nplt.show()"
+        ],
+        "Crash Information": [
+            "C:\\Users\\pc\\AppData\\Local\\Programs\\Python\\Python311\\python.exe C:/git/RouseModel/tau_plot.py\nC:\\git\\RouseModel\tau_plot.py:29: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown\n  plt.show()\n\nProcess finished with exit code 0"
+        ],
+        "Crash Context": "I am usingWindows 10PyCharm 2021.3.3 Professional Editionpython 3.11.5matplotlib 3.8.1How can I permanently resolve this issue in my development environment?",
+        "Accepted Answer": "I have the same issue. In my case, I installed the PyQt5==5.15.10. After that, I run my code successfully.pip install PyQt5==5.15.10orpip install PyQt5withpython==3.11But from 2024, you guys should install versionPyQt6or the last version withpython==3.12or later.",
+        "answer code line": 0,
+        "Accepted Answer length": 263
+    },
+    {
+        "id": "77233855",
+        "title": "Why did I get an error ModuleNotFoundError: No module named 'distutils'?",
+        "time": "2023-10-05 01:54:27Z",
+        "type": "non-code",
+        "language": "python",
+        "code line": 0,
+        "code length": 0,
+        "question length": 759,
+        "question without crash length": 381,
+        "Buggy Code": [],
+        "Crash Information": [
+            "ModuleNotFoundError: No module named 'distutils'\"",
+            "Note: you may need to restart the kernel to use updated packages.\nWARNING: Skipping distutils as it is not installed.",
+            "Note: you may need to restart the kernel to use updated packages.\nERROR: Could not find a version that satisfies the requirement distutils (from versions: none)\nERROR: No matching distribution found for distutils"
+        ],
+        "Crash Context": "I've installedscikit-fuzzy, but when Iimport skfuzzy as fuzzI get an errorI already tried topip uninstall distutilsand got this outputThen I tried to install it againpip install distutilsWhere did I go wrong?This question addresses the problem from the perspective ofinstallinga library. Fordevelopinga library, seeHow can one fully replace distutils, which is deprecated in 3.10?.",
+        "Accepted Answer": "Python 3.12 does not come with a stdlib distutils module (changelog), becausedistutilswas deprecated in 3.10 and removed in 3.12. SeePEP 632 – Deprecate distutils module.You can still usedistutilson Python 3.12+ by installingsetuptools.When that doesn't work, you may need stay on Python < 3.12 until the 3rd-party package (skfuzzyin this case) publishes an updated release for Python 3.12 support.",
+        "answer code line": 0,
+        "Accepted Answer length": 398
+    },
+    {
+        "id": "78279136",
+        "title": "\"ImportError: cannot import name 'triu' from 'scipy.linalg'\" when importing Gensim",
+        "time": "2024-04-05 10:01:46Z",
+        "type": "non-code",
+        "language": "python",
+        "code line": 0,
+        "code length": 0,
+        "question length": 1111,
+        "question without crash length": 112,
+        "Buggy Code": [],
+        "Crash Information": [
+            "Traceback (most recent call last):\n  File \"<stdin>\", line 1, in <module>\n  File \"/usr/local/lib/python3.10/dist-packages/gensim/__init__.py\", line 11, in <module>\n    from gensim import parsing, corpora, matutils, interfaces, models, similarities, utils  # noqa:F401\n  File \"/usr/local/lib/python3.10/dist-packages/gensim/corpora/__init__.py\", line 6, in <module>\n    from .indexedcorpus import IndexedCorpus  # noqa:F401 must appear before the other classes\n  File \"/usr/local/lib/python3.10/dist-packages/gensim/corpora/indexedcorpus.py\", line 14, in <module>\n    from gensim import interfaces, utils\n  File \"/usr/local/lib/python3.10/dist-packages/gensim/interfaces.py\", line 19, in <module>\n    from gensim import utils, matutils\n  File \"/usr/local/lib/python3.10/dist-packages/gensim/matutils.py\", line 20, in <module>\n    from scipy.linalg import get_blas_funcs, triu\nImportError: cannot import name 'triu' from 'scipy.linalg' (/usr/local/lib/python3.10/dist-packages/scipy/linalg/__init__.py)"
+        ],
+        "Crash Context": "I am trying to use Gensim, but runningimport gensimraises this error:Why is this happening and how can I fix it?",
+        "Accepted Answer": "I found the issue.Thescipy.linalgfunctionstri,triu&trilare deprecated and will be removed in SciPy 1.13.—SciPy 1.11.0 Release Notes § Deprecated featuresSo, I installed SciPy v1.10.1 instead of the latest version and it was working well.pip install scipy==1.10.1",
+        "answer code line": 1,
+        "Accepted Answer length": 262
+    },
+    {
+        "id": "77433096",
+        "title": "NotImplementedError: Loading a dataset cached in a LocalFileSystem is not supported",
+        "time": "2023-11-06 17:29:38Z",
+        "type": "non-code",
+        "language": "python",
+        "code line": 0,
+        "code length": 0,
+        "question length": 2475,
+        "question without crash length": 419,
+        "Buggy Code": [],
+        "Crash Information": [
+            "---------------------------------------------------------------------------\nNotImplementedError                       Traceback (most recent call last)\n/Users/ari/Downloads/00-fine-tuning.ipynb Celda 2 line 3\n      1 from datasets import load_dataset\n----> 3 data = load_dataset(\n      4     \"jamescalam/agent-conversations-retrieval-tool\",\n      5     split=\"train\"\n      6 )\n      7 data\n\nFile ~/Documents/fastapi_language_tutor/env/lib/python3.10/site-packages/datasets/load.py:2149, in load_dataset(path, name, data_dir, data_files, split, cache_dir, features, download_config, download_mode, verification_mode, ignore_verifications, keep_in_memory, save_infos, revision, token, use_auth_token, task, streaming, num_proc, storage_options, **config_kwargs)\n   2145 # Build dataset for splits\n   2146 keep_in_memory = (\n   2147     keep_in_memory if keep_in_memory is not None else is_small_dataset(builder_instance.info.dataset_size)\n   2148 )\n-> 2149 ds = builder_instance.as_dataset(split=split, verification_mode=verification_mode, in_memory=keep_in_memory)\n   2150 # Rename and cast features to match task schema\n   2151 if task is not None:\n   2152     # To avoid issuing the same warning twice\n\nFile ~/Documents/fastapi_language_tutor/env/lib/python3.10/site-packages/datasets/builder.py:1173, in DatasetBuilder.as_dataset(self, split, run_post_process, verification_mode, ignore_verifications, in_memory)\n   1171 is_local = not is_remote_filesystem(self._fs)\n   1172 if not is_local:\n-> 1173     raise NotImplementedError(f\"Loading a dataset cached in a {type(self._fs).__name__} is not supported.\")\n   1174 if not os.path.exists(self._output_dir):\n   1175     raise FileNotFoundError(\n   1176         f\"Dataset {self.dataset_name}: could not find data in {self._output_dir}. Please make sure to call \"\n   1177         \"builder.download_and_prepare(), or use \"\n   1178         \"datasets.load_dataset() before trying to access the Dataset object.\"\n   1179     )\n\nNotImplementedError: Loading a dataset cached in a LocalFileSystem is not supported."
+        ],
+        "Crash Context": "I try to load a dataset using thedatasetspython module in my local Python Notebook. I am running a Python 3.10.13 kernel as I do for my virtual environment.I cannot load the datasets I am following from a tutorial. Here's the error:How do I resolve this? I don't understand how this error is applicable, given that the dataset is something I am fetching and thuscannotbe cached in my LocalFileSystem in the first place.",
+        "Accepted Answer": "Try doing:pip install -U datasetsThis error stems from a breaking change in fsspec. It has been fixed in the latest datasets release (2.14.6). Updating the installation with pip install -U datasets should fix the issue.git link :https://github.com/huggingface/datasets/issues/6352If you are usingfsspec, then do:pip install fsspec==2023.9.2There is a problem withfsspec==2023.10.0git link :https://github.com/huggingface/datasets/issues/6330Edit: Looks like it broken again in2.17and2.18downgrading to2.16should work.",
+        "answer code line": 2,
+        "Accepted Answer length": 517
+    },
+    {
+        "id": "77903321",
+        "title": "ImportError: cannot import name 'mock_s3' from 'moto'",
+        "time": "2024-01-30 00:33:21Z",
+        "type": "non-code",
+        "language": "python",
+        "code line": 11,
+        "code length": 357,
+        "question length": 472,
+        "question without crash length": 472,
+        "Buggy Code": [
+            "import pytest\nfrom moto import mock_s3\n\n\n@pytest.fixture(scope='module')\ndef s3():\n    with mock_s3():\n        os.environ['AWS_ACCESS_KEY_ID'] = 'test'\n        os.environ['AWS_SECRET_ACCESS_KEY'] = 'test'\n        os.environ['AWS_DEFAULT_REGION'] = 'us-east-1'\n        s3 = boto3.resource('s3')\n        s3.create_bucket(Bucket='test_bucket')\n        yield s3"
+        ],
+        "Crash Information": [],
+        "Crash Context": "This code was working, but is now throwing an exceptionCannot import name mock_s3 from moto. What am I doing wrong?",
+        "Accepted Answer": "Simply replace your import ofmock_s3withfrom moto import mock_awsand usewith mock_aws():instead.Moto was recently bumped to version 5.0, and you were probably running 4.x before.https://github.com/getmoto/moto/blob/master/CHANGELOG.mdIf you check the change log, you will see that an important breaking change was made:All decorators have been replaced with a single decorator:mock_aws",
+        "answer code line": 0,
+        "Accepted Answer length": 385
+    },
+    {
+        "id": "79290968",
+        "title": "'super' object has no attribute '__sklearn_tags__'",
+        "time": "2024-12-18 11:45:52Z",
+        "type": "non-code",
+        "language": "python",
+        "code line": 1,
+        "code length": 51,
+        "question length": 828,
+        "question without crash length": 828,
+        "Buggy Code": [
+            "'super' object has no attribute '__sklearn_tags__'."
+        ],
+        "Crash Information": [],
+        "Crash Context": "I am encountering an AttributeError while fitting an XGBRegressor using RandomizedSearchCV from Scikit-learn. The error message states:This occurs when I invoke thefitmethod on the RandomizedSearchCV object. I suspect it could be related to compatibility issues between Scikit-learn and XGBoost or Python version. I am using Python 3.12, and both Scikit-learn and XGBoost are installed with their latest versions.I attempted to tune the hyperparameters of an XGBRegressor using RandomizedSearchCV from Scikit-learn. I expected the model to fit the training data without issues and provide the best parameters after cross-validation.I also checked for compatibility issues, ensured the libraries were up-to-date, and reinstalled Scikit-learn and XGBoost, but the error persists.",
+        "Accepted Answer": "Scikit-learn version 1.6.0 modified the API around its \"tags\", and that's the cause of this error.  XGBoost made the necessary changes in version 2.1.4 (specifically inPR11021).  In sklearn 1.6.1, the error was downgraded to a warning (to be returned to an error in 1.7). So you should be OK with any of:xgboost >=2.1.4sklearn >=1.6.1,<1.7, and expectDeprecationWarningssklearn <1.6See also sklearnIssue#30479and1.6.1 release notes, andxgboost 2.1.4 release notes.",
+        "answer code line": 0,
+        "Accepted Answer length": 464
+    },
+    {
+        "id": "78641150",
+        "title": "A module that was compiled using NumPy 1.x cannot be run in NumPy 2.0.0",
+        "time": "2024-06-19 07:49:51Z",
+        "type": "non-code",
+        "language": "python",
+        "code line": 8,
+        "code length": 318,
+        "question length": 6606,
+        "question without crash length": 393,
+        "Buggy Code": [
+            "pip install numpy==2.0.0\n\nimport numpy as np\nnp.__version__\n#2.0.0",
+            "pip install opencv-python\n\nRequirement already satisfied: opencv-python in /usr/local/lib/python3.10/dist-packages (4.8.0.76)\nRequirement already satisfied: numpy>=1.21.2 in /usr/local/lib/python3.10/dist-packages (from opencv-python) (2.0.0)",
+            "import cv2"
+        ],
+        "Crash Information": [
+            "A module that was compiled using NumPy 1.x cannot be run in\nNumPy 2.0.0 as it may crash. To support both 1.x and 2.x\nversions of NumPy, modules must be compiled with NumPy 2.0.\nSome module may need to rebuild instead e.g. with 'pybind11>=2.12'.\n\nIf you are a user of the module, the easiest solution will be to\ndowngrade to 'numpy<2' or try to upgrade the affected module.\nWe expect that some modules will need time to support NumPy 2.\n\nTraceback (most recent call last):  File \"/usr/lib/python3.10/runpy.py\", line 196, in _run_module_as_main\n    return _run_code(code, main_globals, None,\n  File \"/usr/lib/python3.10/runpy.py\", line 86, in _run_code\n    exec(code, run_globals)\n  File \"/usr/local/lib/python3.10/dist-packages/colab_kernel_launcher.py\", line 37, in <module>\n    ColabKernelApp.launch_instance()\n  File \"/usr/local/lib/python3.10/dist-packages/traitlets/config/application.py\", line 992, in launch_instance\n    app.start()\n  File \"/usr/local/lib/python3.10/dist-packages/ipykernel/kernelapp.py\", line 619, in start\n    self.io_loop.start()\n  File \"/usr/local/lib/python3.10/dist-packages/tornado/platform/asyncio.py\", line 195, in start\n    self.asyncio_loop.run_forever()\n  File \"/usr/lib/python3.10/asyncio/base_events.py\", line 603, in run_forever\n    self._run_once()\n  File \"/usr/lib/python3.10/asyncio/base_events.py\", line 1909, in _run_once\n    handle._run()\n  File \"/usr/lib/python3.10/asyncio/events.py\", line 80, in _run\n    self._context.run(self._callback, *self._args)\n  File \"/usr/local/lib/python3.10/dist-packages/tornado/ioloop.py\", line 685, in <lambda>\n    lambda f: self._run_callback(functools.partial(callback, future))\n  File \"/usr/local/lib/python3.10/dist-packages/tornado/ioloop.py\", line 738, in _run_callback\n    ret = callback()\n  File \"/usr/local/lib/python3.10/dist-packages/tornado/gen.py\", line 825, in inner\n    self.ctx_run(self.run)\n  File \"/usr/local/lib/python3.10/dist-packages/tornado/gen.py\", line 786, in run\n    yielded = self.gen.send(value)\n  File \"/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py\", line 361, in process_one\n    yield gen.maybe_future(dispatch(*args))\n  File \"/usr/local/lib/python3.10/dist-packages/tornado/gen.py\", line 234, in wrapper\n    yielded = ctx_run(next, result)\n  File \"/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py\", line 261, in dispatch_shell\n    yield gen.maybe_future(handler(stream, idents, msg))\n  File \"/usr/local/lib/python3.10/dist-packages/tornado/gen.py\", line 234, in wrapper\n    yielded = ctx_run(next, result)\n  File \"/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py\", line 539, in execute_request\n    self.do_execute(\n  File \"/usr/local/lib/python3.10/dist-packages/tornado/gen.py\", line 234, in wrapper\n    yielded = ctx_run(next, result)\n  File \"/usr/local/lib/python3.10/dist-packages/ipykernel/ipkernel.py\", line 302, in do_execute\n    res = shell.run_cell(code, store_history=store_history, silent=silent)\n  File \"/usr/local/lib/python3.10/dist-packages/ipykernel/zmqshell.py\", line 539, in run_cell\n    return super(ZMQInteractiveShell, self).run_cell(*args, **kwargs)\n  File \"/usr/local/lib/python3.10/dist-packages/IPython/core/interactiveshell.py\", line 2975, in run_cell\n    result = self._run_cell(\n  File \"/usr/local/lib/python3.10/dist-packages/IPython/core/interactiveshell.py\", line 3030, in _run_cell\n    return runner(coro)\n  File \"/usr/local/lib/python3.10/dist-packages/IPython/core/async_helpers.py\", line 78, in _pseudo_sync_runner\n    coro.send(None)\n  File \"/usr/local/lib/python3.10/dist-packages/IPython/core/interactiveshell.py\", line 3257, in run_cell_async\n    has_raised = await self.run_ast_nodes(code_ast.body, cell_name,\n  File \"/usr/local/lib/python3.10/dist-packages/IPython/core/interactiveshell.py\", line 3473, in run_ast_nodes\n    if (await self.run_code(code, result,  async_=asy)):\n  File \"/usr/local/lib/python3.10/dist-packages/IPython/core/interactiveshell.py\", line 3553, in run_code\n    exec(code_obj, self.user_global_ns, self.user_ns)\n  File \"<ipython-input-4-c8ec22b3e787>\", line 1, in <cell line: 1>\n    import cv2\n  File \"/usr/local/lib/python3.10/dist-packages/google/colab/_import_hooks/_cv2.py\", line 78, in load_module\n    cv_module = imp.load_module(name, *module_info)\n  File \"/usr/lib/python3.10/imp.py\", line 245, in load_module\n    return load_package(name, filename)\n  File \"/usr/lib/python3.10/imp.py\", line 217, in load_package\n    return _load(spec)\n  File \"/usr/local/lib/python3.10/dist-packages/cv2/__init__.py\", line 181, in <module>\n    bootstrap()\n  File \"/usr/local/lib/python3.10/dist-packages/cv2/__init__.py\", line 153, in bootstrap\n    native_module = importlib.import_module(\"cv2\")\n  File \"/usr/lib/python3.10/importlib/__init__.py\", line 126, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"/usr/local/lib/python3.10/dist-packages/google/colab/_import_hooks/_cv2.py\", line 78, in load_module\n    cv_module = imp.load_module(name, *module_info)\n  File \"/usr/lib/python3.10/imp.py\", line 243, in load_module\n    return load_dynamic(name, filename, file)\n  File \"/usr/lib/python3.10/imp.py\", line 343, in load_dynamic\n    return _load(spec)\n---------------------------------------------------------------------------\nAttributeError                            Traceback (most recent call last)\nAttributeError: _ARRAY_API not found\n---------------------------------------------------------------------------\nImportError                               Traceback (most recent call last)\n<ipython-input-4-c8ec22b3e787> in <cell line: 1>()\n----> 1 import cv2\n\n8 frames\n/usr/lib/python3.10/imp.py in load_dynamic(name, path, file)\n    341         spec = importlib.machinery.ModuleSpec(\n    342             name=name, loader=loader, origin=path)\n--> 343         return _load(spec)\n    344 \n    345 else:\n\nImportError: numpy.core.multiarray failed to import\n\n---------------------------------------------------------------------------\nNOTE: If your import is failing due to a missing package, you can\nmanually install dependencies using either !pip or !apt.\n\nTo view examples of installing some common dependencies, click the\n\"Open Examples\" button below."
+        ],
+        "Crash Context": "I installed numpy 2.0.0then I installed:Then I did:I am getting this error:",
+        "Accepted Answer": "There are two solutions for this error:1. downgrade your numpy to 1.26.4pip install numpy==1.26.4orpip install \"numpy<2.0\"Make sure to restart your kernel after downgrading numpyAnother option is:2. install the latest version of the module which is failing*I had an old version ofopencv-python 4.8.0.76I was able to get this working by installing the latest version ofopencv-pythonbypip install opencv-python==4.10.0.84*Some modules may still not work withnumpy 2.0'We expect that some modules will need time to support NumPy 2'",
+        "answer code line": 3,
+        "Accepted Answer length": 528
+    },
+    {
+        "id": "78650222",
+        "title": "ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject [duplicate]",
+        "time": "2024-06-21 02:43:35Z",
+        "type": "non-code",
+        "language": "python",
+        "code line": 21,
+        "code length": 1268,
+        "question length": 6692,
+        "question without crash length": 1510,
+        "Buggy Code": [
+            "pip install pandas==2.1.1 numpy==2.0.0",
+            "Collecting pandas==2.1.1\n  Downloading pandas-2.1.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.3 MB)\n     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.3/12.3 MB 44.7 MB/s eta 0:00:00\nCollecting numpy==2.0.0\n  Using cached numpy-2.0.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (19.3 MB)\nRequirement already satisfied: python-dateutil>=2.8.2 in /usr/local/lib/python3.10/dist-packages (from pandas==2.1.1) (2.8.2)\nRequirement already satisfied: pytz>=2020.1 in /usr/local/lib/python3.10/dist-packages (from pandas==2.1.1) (2023.4)\nRequirement already satisfied: tzdata>=2022.1 in /usr/local/lib/python3.10/dist-packages (from pandas==2.1.1) (2024.1)\nRequirement already satisfied: six>=1.5 in /usr/local/lib/python3.10/dist-packages (from python-dateutil>=2.8.2->pandas==2.1.1) (1.16.0)\nInstalling collected packages: numpy, pandas\n  Attempting uninstall: numpy\n    Found existing installation: numpy 1.26.4\n    Uninstalling numpy-1.26.4:\n      Successfully uninstalled numpy-1.26.4\n  Attempting uninstall: pandas\n    Found existing installation: pandas 2.0.3\n    Uninstalling pandas-2.0.3:\n      Successfully uninstalled pandas-2.0.3\n\nSuccessfully installed numpy-2.0.0 pandas-2.1.1",
+            "import pandas"
+        ],
+        "Crash Information": [
+            "Traceback (most recent call last):  File \"/usr/lib/python3.10/runpy.py\", line 196, in _run_module_as_main\n    return _run_code(code, main_globals, None,\n  File \"/usr/lib/python3.10/runpy.py\", line 86, in _run_code\n    exec(code, run_globals)\n  File \"/usr/local/lib/python3.10/dist-packages/colab_kernel_launcher.py\", line 37, in <module>\n    ColabKernelApp.launch_instance()\n  File \"/usr/local/lib/python3.10/dist-packages/traitlets/config/application.py\", line 992, in launch_instance\n    app.start()\n  File \"/usr/local/lib/python3.10/dist-packages/ipykernel/kernelapp.py\", line 619, in start\n    self.io_loop.start()\n  File \"/usr/local/lib/python3.10/dist-packages/tornado/platform/asyncio.py\", line 195, in start\n    self.asyncio_loop.run_forever()\n  File \"/usr/lib/python3.10/asyncio/base_events.py\", line 603, in run_forever\n    self._run_once()\n  File \"/usr/lib/python3.10/asyncio/base_events.py\", line 1909, in _run_once\n    handle._run()\n  File \"/usr/lib/python3.10/asyncio/events.py\", line 80, in _run\n    self._context.run(self._callback, *self._args)\n  File \"/usr/local/lib/python3.10/dist-packages/tornado/ioloop.py\", line 685, in <lambda>\n    lambda f: self._run_callback(functools.partial(callback, future))\n  File \"/usr/local/lib/python3.10/dist-packages/tornado/ioloop.py\", line 738, in _run_callback\n    ret = callback()\n  File \"/usr/local/lib/python3.10/dist-packages/tornado/gen.py\", line 825, in inner\n    self.ctx_run(self.run)\n  File \"/usr/local/lib/python3.10/dist-packages/tornado/gen.py\", line 786, in run\n    yielded = self.gen.send(value)\n  File \"/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py\", line 361, in process_one\n    yield gen.maybe_future(dispatch(*args))\n  File \"/usr/local/lib/python3.10/dist-packages/tornado/gen.py\", line 234, in wrapper\n    yielded = ctx_run(next, result)\n  File \"/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py\", line 261, in dispatch_shell\n    yield gen.maybe_future(handler(stream, idents, msg))\n  File \"/usr/local/lib/python3.10/dist-packages/tornado/gen.py\", line 234, in wrapper\n    yielded = ctx_run(next, result)\n  File \"/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py\", line 539, in execute_request\n    self.do_execute(\n  File \"/usr/local/lib/python3.10/dist-packages/tornado/gen.py\", line 234, in wrapper\n    yielded = ctx_run(next, result)\n  File \"/usr/local/lib/python3.10/dist-packages/ipykernel/ipkernel.py\", line 302, in do_execute\n    res = shell.run_cell(code, store_history=store_history, silent=silent)\n  File \"/usr/local/lib/python3.10/dist-packages/ipykernel/zmqshell.py\", line 539, in run_cell\n    return super(ZMQInteractiveShell, self).run_cell(*args, **kwargs)\n  File \"/usr/local/lib/python3.10/dist-packages/IPython/core/interactiveshell.py\", line 2975, in run_cell\n    result = self._run_cell(\n  File \"/usr/local/lib/python3.10/dist-packages/IPython/core/interactiveshell.py\", line 3030, in _run_cell\n    return runner(coro)\n  File \"/usr/local/lib/python3.10/dist-packages/IPython/core/async_helpers.py\", line 78, in _pseudo_sync_runner\n    coro.send(None)\n  File \"/usr/local/lib/python3.10/dist-packages/IPython/core/interactiveshell.py\", line 3257, in run_cell_async\n    has_raised = await self.run_ast_nodes(code_ast.body, cell_name,\n  File \"/usr/local/lib/python3.10/dist-packages/IPython/core/interactiveshell.py\", line 3473, in run_ast_nodes\n    if (await self.run_code(code, result,  async_=asy)):\n  File \"/usr/local/lib/python3.10/dist-packages/IPython/core/interactiveshell.py\", line 3553, in run_code\n    exec(code_obj, self.user_global_ns, self.user_ns)\n  File \"<ipython-input-1-38d4b0363d82>\", line 1, in <cell line: 1>\n    import pandas\n  File \"/usr/local/lib/python3.10/dist-packages/pandas/__init__.py\", line 23, in <module>\n    from pandas.compat import (\n  File \"/usr/local/lib/python3.10/dist-packages/pandas/compat/__init__.py\", line 27, in <module>\n    from pandas.compat.pyarrow import (\n  File \"/usr/local/lib/python3.10/dist-packages/pandas/compat/pyarrow.py\", line 8, in <module>\n    import pyarrow as pa\n  File \"/usr/local/lib/python3.10/dist-packages/pyarrow/__init__.py\", line 65, in <module>\n    import pyarrow.lib as _lib\n---------------------------------------------------------------------------\nAttributeError                            Traceback (most recent call last)\nAttributeError: _ARRAY_API not found\n---------------------------------------------------------------------------\nValueError                                Traceback (most recent call last)\n<ipython-input-1-38d4b0363d82> in <cell line: 1>()\n----> 1 import pandas\n\n2 frames\n/usr/local/lib/python3.10/dist-packages/pandas/_libs/__init__.py in <module>\n     16 import pandas._libs.pandas_parser  # noqa: E501 # isort: skip # type: ignore[reportUnusedImport]\n     17 import pandas._libs.pandas_datetime  # noqa: F401,E501 # isort: skip # type: ignore[reportUnusedImport]\n---> 18 from pandas._libs.interval import Interval\n     19 from pandas._libs.tslibs import (\n     20     NaT,\n\ninterval.pyx in init pandas._libs.interval()\n\nValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject"
+        ],
+        "Crash Context": "This question already has answers here:numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject(8 answers)Closed6 months ago.MREPython 3.10on Google ColabOutputWhen I do :I get this error:",
+        "Accepted Answer": "I found a solution for now:I need to downgradenumpyto version1.26.4pip install numpy==1.26.4orpip install \"numpy<2\"Restart session after downgradingnumpyWas able to successfully import pandas.Related  git :https://github.com/numpy/numpy/issues/26710",
+        "answer code line": 2,
+        "Accepted Answer length": 249
+    },
+    {
+        "id": "77074676",
+        "title": "ImportError: cannot import name 'deprecated' from 'typing_extensions'",
+        "time": "2023-09-10 02:58:29Z",
+        "type": "non-code",
+        "language": "python",
+        "code line": 0,
+        "code length": 0,
+        "question length": 1940,
+        "question without crash length": 312,
+        "Buggy Code": [],
+        "Crash Information": [
+            "ERROR: pydantic 2.3.0 has requirement typing-extensions>=4.6.1, but you'll have typing-extensions 4.4.0 which is incompatible.\nERROR: pydantic-core 2.6.3 has requirement typing-extensions!=4.7.0,>=4.6.0, but you'll have typing-extensions 4.4.0 which is incompatible.\nInstalling collected packages: typing-extensions\n  Attempting uninstall: typing-extensions\n    Found existing installation: typing-extensions 4.7.1\n    Uninstalling typing-extensions-4.7.1:\n      Successfully uninstalled typing-extensions-4.7.1\nSuccessfully installed typing-extensions-4.4.0",
+            "(base) E:\\Anaconda>python -m spacy download en\nTraceback (most recent call last):\n  File \"E:\\Anaconda\\lib\\site-packages\\confection\\__init__.py\", line 38, in <module>\n    from pydantic.v1 import BaseModel, Extra, ValidationError, create_model\n  File \"E:\\Anaconda\\lib\\site-packages\\pydantic\\__init__.py\", line 13, in <module>\n    from . import dataclasses\n  File \"E:\\Anaconda\\lib\\site-packages\\pydantic\\dataclasses.py\", line 11, in <module>\n    from ._internal import _config, _decorators, _typing_extra\n  File \"E:\\Anaconda\\lib\\site-packages\\pydantic\\_internal\\_config.py\", line 9, in <module>\n    from ..config import ConfigDict, ExtraValues, JsonEncoder, JsonSchemaExtraCallable\n  File \"E:\\Anaconda\\lib\\site-packages\\pydantic\\config.py\", line 9, in <module>\n    from .deprecated.config import BaseConfig\n  File \"E:\\Anaconda\\lib\\site-packages\\pydantic\\deprecated\\config.py\", line 6, in <module>\n    from typing_extensions import Literal, deprecated\nImportError: cannot import name 'deprecated' from 'typing_extensions' (E:\\Anaconda\\lib\\site-packages\typing_extensions.py)"
+        ],
+        "Crash Context": "I want to download spacy, but the version of typing-extensions is lowered in the terminal:Next I want to install the language packpython -m spacy download en, but another error occurs：My current python version is 3.7, should I update it? Or is there any better solution? I'm a newbie in this area, thank you all！",
+        "Accepted Answer": "You should usetyping_extensions==4.7.1try :pip install typing_extensions==4.7.1 --upgradeI also suggest you to upgrade your python version from3.7to3.10or3.11See a relevant answer:https://github.com/tiangolo/fastapi/discussions/9808",
+        "answer code line": 1,
+        "Accepted Answer length": 232
+    },
+    {
+        "id": "78949093",
+        "title": "How to Resolve AttributeError: module 'fiona' has no attribute 'path'?",
+        "time": "2024-09-04 14:06:26Z",
+        "type": "non-code",
+        "language": "python",
+        "code line": 5,
+        "code length": 154,
+        "question length": 485,
+        "question without crash length": 485,
+        "Buggy Code": [
+            "pip install geopandas\n pip install fiona\n\n import geopandas as gpd\n import fiona\n\n countries = gpd.read_file(gpd.datasets.get_path(\"naturalearth_lowres\"))"
+        ],
+        "Crash Information": [],
+        "Crash Context": "I have a piece of code that was working fine until last week, but now it's failing with the following error:AttributeError: module 'fiona' has no attribute 'path'I’ve ensured that all the necessary libraries are installed and imported. Does anyone have any ideas on what might be going wrong or how I can resolve this issue?Thanks!",
+        "Accepted Answer": "TL;DR update togeopandas==0.14.4OR pinfionato version1.9.6--It seemsfionarecently upgradedto1.10.0(as of2024-09-04 01:14 UTC) and that may have broken some older versions ofgeopandas, which only depend onfionabeinghigherthan some version, notlowerthan.Upon closer look,geopandasup toversion 0.14.3still callsfiona.path, but inversion 0.14.4it no longer does.So upgradinggeopandasto0.14.4should fix it.Alternatively, forcingfionato stay on version1.9.6should also work.NOTE: upgradinggeopandasto>=1.0seems to removefionaas a dependency altogether, so it will also solve this issue. But it opens up a whole new can of worms by removinggeopandas.dataset. For details on that one, seeHow to get maps to geopandas after datasets are removed?",
+        "answer code line": 0,
+        "Accepted Answer length": 736
+    },
+    {
+        "id": "78498481",
+        "title": "UserWarning: Plan failed with a cudnnException: CUDNN_BACKEND_EXECUTION_PLAN_DESCRIPTOR",
+        "time": "2024-05-18 02:13:18Z",
+        "type": "non-code",
+        "language": "python",
+        "code line": 49,
+        "code length": 2026,
+        "question length": 2768,
+        "question without crash length": 2387,
+        "Buggy Code": [
+            "Collecting environment information...\nPyTorch version: 2.3.0+cu118\nIs debug build: False\nCUDA used to build PyTorch: 11.8\nROCM used to build PyTorch: N/A\nOS: Ubuntu 20.04.6 LTS (x86_64)\nGCC version: (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0\nClang version: Could not collect\nCMake version: version 3.29.3\nLibc version: glibc-2.31\nPython version: 3.9.7 | packaged by conda-forge | (default, Sep  2 2021, 17:58:34)  [GCC 9.4.0] (64-bit runtime)\nPython platform: Linux-5.15.0-69-generic-x86_64-with-glibc2.31\nIs CUDA available: True\nCUDA runtime version: 11.8.89\nCUDA_MODULE_LOADING set to: LAZY\nGPU models and configuration: \nGPU 0: NVIDIA A100 80GB PCIe\nNvidia driver version: 515.105.01\ncuDNN version: Probably one of the following:\n/usr/lib/x86_64-linux-gnu/libcudnn.so.8.8.0\n/usr/lib/x86_64-linux-gnu/libcudnn_adv_infer.so.8.8.0\n/usr/lib/x86_64-linux-gnu/libcudnn_adv_train.so.8.8.0\n/usr/lib/x86_64-linux-gnu/libcudnn_cnn_infer.so.8.8.0\n/usr/lib/x86_64-linux-gnu/libcudnn_cnn_train.so.8.8.0\n/usr/lib/x86_64-linux-gnu/libcudnn_ops_infer.so.8.8.0\n/usr/lib/x86_64-linux-gnu/libcudnn_ops_train.so.8.8.0\nHIP runtime version: N/A\nMIOpen runtime version: N/A\nIs XNNPACK available: True\nCPU:\nArchitecture:                    x86_64\n\nVersions of relevant libraries:\n[pip3] numpy==1.26.4\n[pip3] onnx==1.16.0\n[pip3] onnxruntime==1.17.3\n[pip3] onnxruntime-gpu==1.17.1\n[pip3] onnxsim==0.4.36\n[pip3] optree==0.11.0\n[pip3] torch==2.3.0+cu118\n[pip3] torchaudio==2.3.0+cu118\n[pip3] torchvision==0.18.0+cu118\n[pip3] triton==2.3.0\n[conda] numpy                     1.24.4                   pypi_0    pypi\n[conda] pytorch-quantization      2.2.1                    pypi_0    pypi\n[conda] torch                     2.1.1+cu118              pypi_0    pypi\n[conda] torchaudio                2.1.1+cu118              pypi_0    pypi\n[conda] torchmetrics              0.8.0                    pypi_0    pypi\n[conda] torchvision               0.16.1+cu118             pypi_0    pypi\n[conda] triton                    2.1.0                    pypi_0    pypi"
+        ],
+        "Crash Information": [
+            "site-packages/torch/autograd/graph.py:744: UserWarning: Plan failed with a cudnnException: CUDNN_BACKEND_EXECUTION_PLAN_DESCRIPTOR: cudnnFinalize Descriptor Failed cudnn_status: CUDNN_STATUS_NOT_SUPPORTED (Triggered internally at ../aten/src/ATen/native/cudnn/Conv_v8.cpp:919.)\n  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass"
+        ],
+        "Crash Context": "I'm trying to train a model with Yolov8. Everything was good but today I suddenly notice getting this warning apparently related toPyTorchandcuDNN. In spite the warning, the training seems to be progressing though. I'm not sure if it has any negative effects on the training progress.What is the problem and how to address this?Here is the output ofcollect_env:",
+        "Accepted Answer": "June 2024 Solution: Upgrade torch version to 2.3.1 to fix it:pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118",
+        "answer code line": 0,
+        "Accepted Answer length": 153
+    },
+    {
+        "id": "77807142",
+        "title": "AttributeError: Calling operator \"bpy.ops.import_scene.obj\" error, could not be found",
+        "time": "2024-01-12 14:06:50Z",
+        "type": "non-code",
+        "language": "python",
+        "code line": 16,
+        "code length": 614,
+        "question length": 1654,
+        "question without crash length": 1234,
+        "Buggy Code": [
+            "import bpy\n\ninp = 'mushroom-shelve-1-merged.obj'\n\n\n# Load the triangle mesh OBJ file\nbpy.ops.import_scene.obj(filepath=inp, \n                        use_smooth_groups=False,\n                        use_image_search=False)\n\n# Get the imported mesh\nobj = bpy.context.selected_objects[0]\n\n# Convert triangles to quads\n# The `beauty` parameter can be set to False if desired\nbpy.ops.object.mode_set(mode='EDIT')\nbpy.ops.mesh.select_all(action='SELECT')\nbpy.ops.mesh.tris_convert_to_quads(beauty=True)\nbpy.ops.object.mode_set(mode='OBJECT')\n\n# Export to OBJ with quads\nbpy.ops.export_scene.obj(filepath='quad_mesh.obj')"
+        ],
+        "Crash Information": [
+            "Traceback (most recent call last):\n  File \"/home/arrafi/mesh-convert-application/test.py\", line 8, in <module>\n    bpy.ops.import_scene.obj(filepath=inp, \n  File \"/home/arrafi/mesh-convert-application/venv/lib/python3.10/site-packages/bpy/4.0/scripts/modules/bpy/ops.py\", line 109, in __call__\n    ret = _op_call(self.idname_py(), kw)\nAttributeError: Calling operator \"bpy.ops.import_scene.obj\" error, could not be found"
+        ],
+        "Crash Context": "I am trying to write a python script that will convert triangular-mesh objects to quad-mesh objects.For example, image (a) will be my input (.obj/.stl) file and image (b) will be the output.I am a noob with mesh-algorithms or how they work all together. So, far this is the script I have written:This results in the following error:Any help with what I am doing wrong here would be greatly appreciated.Also please provide your suggestions for if you know any better way to convert triangular-mesh to quad-mesh with Python.If you guys know of any API that I can call with python to do the conversion, that would work too.",
+        "Accepted Answer": "Turns outbpy.ops.import_scene.objwas removed atbpy==4which is the latest blender-api for python, hence the error. Inbpy>4you have to usebpy.ops.wm.obj_import(filepath='')I just downgraded tobpy==3.60to import object directly in the current scene.pip install bpy==3.6.0I also modified my script to take input of.objfiles in triangular-mesh and then convert the mesh to quadrilateral, then export as bothstlandobj. Here's my working script:def convert_tris_to_quads(obj_path, export_folder):\n    try:\n        filename = os.path.basename(obj_path).split('.')[0]\n        logging.info(f\"Importing {obj_path}\")\n\n        bpy.ops.object.select_all(action='DESELECT')\n        bpy.ops.object.select_by_type(type='MESH')\n        bpy.ops.object.delete()\n    \n        bpy.ops.import_scene.obj(filepath=obj_path)\n        print(\"current objects in the scene: \", [obj for obj in bpy.context.scene.objects])\n        for obj in bpy.context.selected_objects:\n            bpy.context.view_layer.objects.active = obj\n            \n        logging.info(\"Converting mesh\")\n        bpy.ops.object.mode_set(mode='EDIT')\n        bpy.ops.mesh.select_all(action='SELECT')\n        bpy.ops.mesh.tris_convert_to_quads()\n        bpy.ops.object.mode_set(mode='OBJECT')\n\n        # Export to OBJ\n        obj_export_path = export_folder + filename + '_quad.obj'\n        logging.info(f\"Exporting OBJ to {obj_export_path}\")\n        bpy.ops.export_scene.obj(filepath=obj_export_path, use_selection=True)\n\n        # Export to STL\n        stl_export_path = export_folder + filename + '_quad.stl'\n        logging.info(f\"Exporting STL to {stl_export_path}\")\n        bpy.ops.export_mesh.stl(filepath=stl_export_path, use_selection=True)\n\n    except Exception as e:\n        logging.error(f\"Error processing {obj_path}: {e}\")\n        return FalseThis still might not be the best approach to this, so do let me know if anyone know any better approach.",
+        "answer code line": 34,
+        "Accepted Answer length": 1903
+    },
+    {
+        "id": "77388920",
+        "title": "ERROR: Could not build wheels for aiohttp, which is required to install pyproject.toml-based",
+        "time": "2023-10-30 13:08:50Z",
+        "type": "non-code",
+        "language": "python",
+        "code line": 0,
+        "code length": 0,
+        "question length": 1681,
+        "question without crash length": 290,
+        "Buggy Code": [],
+        "Crash Information": [
+            "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.37.32822\bin\\HostX86\\x64\\cl.exe\" /c /nologo /O2 /W3 /GL /DNDEBUG /MD -IC:\\Users\\sande\\AppData\\Local\\Programs\\Python\\Python312\\include -IC:\\Users\\sande\\AppData\\Local\\Programs\\Python\\Python312\\Include \"-IC:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.37.32822\\include\" \"-IC:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Auxiliary\\VS\\include\" \"-IC:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.22621.0\\ucrt\" \"-IC:\\Program Files (x86)\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\" \"-IC:\\Program Files (x86)\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\shared\" \"-IC:\\Program Files (x86)\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\winrt\" \"-IC:\\Program Files (x86)\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\cppwinrt\" /Tcaiohttp/_websocket.c /Fobuild\temp.win-amd64-cpython-312\\Release\\aiohttp/_websocket.obj\n      _websocket.c\n      aiohttp/_websocket.c(1475): warning C4996: 'Py_OptimizeFlag': deprecated in 3.12\n      aiohttp/_websocket.c(3042): error C2039: 'ob_digit': is not a member of '_longobject'\n\n[end of output]\n\nnote: This error originates from a subprocess, and is likely not a problem with pip.\n\nERROR: Failed building wheel for aiohttp\n\nFailed to build aiohttp\n\nERROR: Could not build wheels for aiohttp, which is required to install pyproject.toml-based projects"
+        ],
+        "Crash Context": "Newbie here.I have been trying to installen the openai library into python, but I keep running into problems. I have already installed C++ libraries.It seems to have problems specific with aio http, and I get the error below.\nI a running a Windows 11 laptop without admin restrictions.Error",
+        "Accepted Answer": "Either usepython 3.11orpip install aiohttp==3.9.0b0installs their current beta release that supports python 3.12.xthen tryopenaiinstallationLink to git :https://github.com/KillianLucas/open-interpreter/issues/581",
+        "answer code line": 1,
+        "Accepted Answer length": 212
+    },
+    {
+        "id": "77104125",
+        "title": "No module named 'keras.wrappers'",
+        "time": "2023-09-14 10:42:00Z",
+        "type": "non-code",
+        "language": "python",
+        "code line": 0,
+        "code length": 0,
+        "question length": 1276,
+        "question without crash length": 286,
+        "Buggy Code": [],
+        "Crash Information": [
+            "from keras.layers import Dense, LSTM, Dropout\nfrom keras import optimizers\n\nfrom sklearn.model_selection import GridSearchCV\nfrom keras.wrappers.scikit_learn import KerasRegressor\n\ndef create_model(unit, dropout_rate, lr ):\n model=Sequential()\n model.add(LSTM(unit,return_sequences=True, input_shape=(1,5)))\n model.add(Dropout(dropout_rate))\n model.add(LSTM(unit))\n model.add(Dropout(dropout_rate))\n model.add(Dense(1))\n adam= optimizers.Adam(lr)\n model.compile(optimizer=adam, loss='mean_squared_error')\n\n return model\n\nmy_regressor = KerasRegressor(build_fn=create_model, verbose=2)\n\ngrid_param_LSTM = {\n    'unit':   [50, 70, 120],\n    'batch_size': [12, 24, 48],\n    'epochs': [200],\n    'lr': [0.001, 0.01, 0.1],\n    'dropout_rate':[0.1, 0.2, 0.3]\n}\n\ngrid_GBR = GridSearchCV(estimator=my_regressor, param_grid = grid_param_LSTM, scoring = 'neg_root_mean_squared_error',  cv = 2)\ngrid_GBR.fit(X_train, y_train)\n\nprint(\"Best: %f using %s\" % (grid_GBR.best_score_, grid_GBR.best_params_))"
+        ],
+        "Crash Context": "I have this code on google colab which allows me to optimise an LSTM model using gridsearchCV, but recently an error message has appeared:ModuleNotFoundError: No module named 'keras.wrappers'.is there another module other than 'keras.wrappers' that allows the code to be restarted?Code:",
+        "Accepted Answer": "This works for mepip install keras==2.12.0Another Approach you can trypip uninstall tensorflow\npip install tensorflow==2.12.0",
+        "answer code line": 3,
+        "Accepted Answer length": 125
+    },
+    {
+        "id": "77124879",
+        "title": "pip: 'extras_require' must be a dictionary whose values are strings or lists of strings containing valid project/version requirement specifiers",
+        "time": "2023-09-18 06:12:27Z",
+        "type": "non-code",
+        "language": "python",
+        "code line": 0,
+        "code length": 0,
+        "question length": 838,
+        "question without crash length": 95,
+        "Buggy Code": [],
+        "Crash Information": [
+            "Collecting gym==0.21.0\n  Using cached gym-0.21.0.tar.gz (1.5 MB)\n  Preparing metadata (setup.py) ... error\n  error: subprocess-exited-with-error\n  \n  × python setup.py egg_info did not run successfully.\n  │ exit code: 1\n  ╰─> [1 lines of output]\n      error in gym setup command: 'extras_require' must be a dictionary whose values are strings or lists of strings containing valid project/version requirement specifiers.\n      [end of output]\n  \n  note: This error originates from a subprocess, and is likely not a problem with pip.\nerror: metadata-generation-failed\n\n× Encountered error while generating package metadata.\n╰─> See above for output.\n\nnote: This is an issue with the package mentioned above, not pip.\nhint: See above for details."
+        ],
+        "Crash Context": "I tried runningpip install gym==0.21.0but got the cryptic error:What may be causing this error?",
+        "Accepted Answer": "Based on the comments in the issue section athttps://github.com/openai, these are the changes that need to be made -pip install setuptools==65.5.0 pip==21  # gym 0.21 installation is broken with more recent versionspip install wheel==0.38.0I was facing the same issue and after doing the above, it was resolved.The problem has been addressedhereandhere.",
+        "answer code line": 0,
+        "Accepted Answer length": 353
+    },
+    {
+        "id": "78604018",
+        "title": "ImportError: cannot import name 'packaging' from 'pkg_resources' when trying to install causal_conv1d",
+        "time": "2024-06-10 18:39:14Z",
+        "type": "non-code",
+        "language": "python",
+        "code line": 1,
+        "code length": 71,
+        "question length": 1363,
+        "question without crash length": 136,
+        "Buggy Code": [
+            "pip install --no-cache-dir  -t /scratch/ahmed/lib  causal_conv1d==1.0.0"
+        ],
+        "Crash Information": [
+            "Collecting causal_conv1d==1.0.0\n  Downloading causal_conv1d-1.0.0.tar.gz (6.4 kB)\n  Preparing metadata (setup.py) ... error\n  error: subprocess-exited-with-error\n  \n  × python setup.py egg_info did not run successfully.\n  │ exit code: 1\n  ╰─> [9 lines of output]\n      Traceback (most recent call last):\n        File \"<string>\", line 2, in <module>\n        File \"<pip-setuptools-caller>\", line 34, in <module>\n        File \"/tmp/pip-install-9i0wsv2k/causal-conv1d_fc0a21267f664102adca1aa336c93106/setup.py\", line 19, in <module>\n          from torch.utils.cpp_extension import (\n        File \"/scratch/ahmed/lib/torch/utils/cpp_extension.py\", line 28, in <module>\n          from pkg_resources import packaging  # type: ignore[attr-defined]\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n      ImportError: cannot import name 'packaging' from 'pkg_resources' (/scratch/ahmed/lib/pkg_resources/__init__.py)\n      [end of output]\n  \n  note: This error originates from a subprocess, and is likely not a problem with pip.\nerror: metadata-generation-failed\n\n× Encountered error while generating package metadata.\n╰─> See above for output.\n\nnote: This is an issue with the package mentioned above, not pip.\nhint: See above for details."
+        ],
+        "Crash Context": "I was trying to install \"causal_conv1d\" using:The error I got is:",
+        "Accepted Answer": "I don't know the exact problem, but it seems this problem happened when I used two directories for Python \"lib\": one was the default Anaconda lib, and I had another separate one. The problem disappeared when I used only the default Anaconda lib.\nIt works fine now.",
+        "answer code line": 0,
+        "Accepted Answer length": 264
+    },
+    {
+        "id": "77969964",
+        "title": "Deprecation Warning with groupby.apply",
+        "type": "non-code",
+        "language": "python",
+        "code line": 11,
+        "Buggy code": [
+            "fprice = df.groupby(['StartDate', 'Commodity', 'DealType']).apply(lambda group: -(group['MTMValue'].sum() - (group['FixedPriceStrike'] * group['Quantity']).sum()) / group['Quantity'].sum()).reset_index(name='FloatPrice')",
+            "TradeID  TradeDate  Commodity  StartDate   ExpiryDate FixedPrice Quantity MTMValue\n-------- ---------- ---------  ---------   ---------- ---------- -------- ---------\n aaa   01/01/2024   (com1,com2) 01/01/2024  01/01/2024    10        10      100.00 \n bbb   01/01/2024   (com1,com2) 01/01/2024  01/01/2024    10        10      100.00 \n ccc   01/01/2024   (com1,com2) 01/01/2024  01/01/2024    10        10      100.00",
+            "TradeID  TradeDate  Commodity  StartDate   ExpiryDate FixedPrice Quantity MTMValue  FloatPrice\n-------- ---------- ---------  ---------   ---------- ---------- -------- --------- ----------\n aaa   01/01/2024   (com1,com2) 01/01/2024  01/01/2024    10        10      100.00      0\n bbb   01/01/2024   (com1,com2) 01/01/2024  01/01/2024    10        10      100.00      0\n ccc   01/01/2024   (com1,com2) 01/01/2024  01/01/2024    10        10      100.00      0"
+        ],
+        "Crash information": [
+            "DeprecationWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning."
+        ],
+        "Crash Context": "I have a python script that reads in data from a csv fileThe code runs fine, but everytime it runs I get this Deprecation message:the warning stems from this piece of code:to my understanding, I am performing the apply function on my groupings,but then I am disregarding the groupings and not using them anymore to be apart of my dataframe. I am confused about the directions to silence the warninghere is some sample data that this code uses:and here is the expected output from this data:",
+        "Accepted Answer": "Aboutinclude_groupsparameterTheinclude_groupsparameter ofDataFrameGroupBy.applyis new in pandas version 2.2.0. It is basically a transition period (2.2.0 -> 3.0) parameter added to help communicating a changing behavior (with warnings) and to tacklepandas Issue 7155. In most cases you should be able to just set it toFalseto silent the warning (see below).SetupLet's say you have a pandas DataFramedfand a dummy functionmyfuncfor apply, and you want toGroup by column'c'Applymyfuncon each group>>> df\n      a  value     c\n0   foo     10  cat1\n1   bar     20  cat2\n2   baz     30  cat1\n3  quux     40  cat2\n\n\n>>> def myfunc(x):\n    print(x, '\n')include_groups = True (Old behavior)This is the defaultbehaviorin pandas <2.2.0 (there is noinclude_groupsparameter)pandas 2.2.0 and above (likely until 3.0) will still default to this but issue a DeprecationWarning.The grouping column(s), here'c'is included in theDataFrameGroupBy>>> df.groupby('c').apply(myfunc)\n     a  value     c\n0  foo     10  cat1\n2  baz     30  cat1 \n\n      a  value     c\n1   bar     20  cat2\n3  quux     40  cat2Now as mentioned inIssue 7155, keeping the grouping columncin the dataframe passed toapplyis unwanted behavior. Most people will not expectcto be present here. Theanswer of buehas actually an example how this could lead to bugs; apply onnp.meanand expect there be less columns (causes a bug if your grouping column is numerical).include_groups = False (new behavior)This will remove the warning in the pandas > 2.2.0 (<3.0)This will be the default in future version of pandas (likely 3.0)This is what you likely would want to have; drop the grouping column'c':>>> df.groupby('c').apply(myfunc, include_groups=False)\n     a  value\n0  foo     10\n2  baz     30 \n\n      a  value\n1   bar     20\n3  quux     40Circumventing need to useinclude_groupsat allOption 1: Explicitly giving column namesYou may also skip the need for using theinclude_groupsparameter at all by explicitly giving the list of the columns (as pointed out by the warning itself; \"..or explicitly select the grouping columns after groupby to silence this warning..\",  and Cahit in theiranswer), like this:>>> df.groupby('c')[['a', 'value', 'c']].apply(myfunc)\n     a  value     c\n0  foo     10  cat1\n2  baz     30  cat1 \n\n      a  value     c\n1   bar     20  cat2\n3  quux     40  cat2 \n\nEmpty DataFrame\nColumns: []\nIndex: []Option 2: Setting the index before groupbyYou may also set the groupby column to the index, as pointed out by Stefan in thecomments.>>> df.set_index('c').groupby(level='c').apply(myfunc)\n        a  value\nc               \ncat1  foo     10\ncat1  baz     30 \n\n         a  value\nc                \ncat2   bar     20\ncat2  quux     40 \n\nEmpty DataFrame\nColumns: []\nIndex: []Details just for this use caseYour grouping columns are['StartDate', 'Commodity', 'DealType']In the apply function you use the following columns:['MTMValue',  'FixedPriceStrike', 'Quantity']i.e., you do not need any of thegrouping columnsin yourapply, and therefore you can useinclude_groups=Falsewhich also removes the warning.fprice = df.groupby(['StartDate', 'Commodity', 'DealType']).apply(lambda group: -(group['MTMValue'].sum() - (group['FixedPriceStrike'] * group['Quantity']).sum()) / group['Quantity'].sum(), include_groups=False).reset_index(name='FloatPrice')"
+    },
+    {
+        "id": "77254582",
+        "title": "Why is a stray semicolon no longer detected by `-pedantic` modern compilers?",
+        "time": "2023-10-08 17:20:02Z",
+        "type": "non-code",
+        "language": "c",
+        "code line": 8,
+        "code length": 136,
+        "question length": 583,
+        "question without crash length": 583,
+        "Buggy Code": [
+            "#include <cstdint>\n#include <iostream>\n\nint add(int a, int b){\n    return a + b;\n}; // <-- stray semicolon\n\nint main (){\n    return 0;\n}"
+        ],
+        "Crash Information": [],
+        "Crash Context": "The following snippet generates compilation errors on adding-pedanticand-Werroron compilers that are a bit old.However this does not happen newer compiler versions. Please find a matrix of GCC (10.xand11.x) and Clang (5.x, 6.x) demonstrating the difference athttps://godbolt.org/z/KWeb8WTxz.I have two parts to my question:Why is this not triggered in recent compilers?Is it possible to enable the old behaviour in recent versions of Clang or GCC?",
+        "Accepted Answer": "Starting in C++11, extra semicolons;(akaempty-declarations) at the global level are valid. I believe this is occasionally useful for writing macros.As such, GCC 11 removed-pedanticdiagnostics for an extra;when-std=c++11or later is used. See:[GCC Bug 96068]  Extra semicolon outside of a function should be allowed after c++11?.[GCC Bugs Mailing list] -Wpedantic doesn't warn about extra semicolons anymore[CWG 569] Spurious semicolons at namespace scope should be allowedYou can restore the old behavior by using a C++ standard older than C++11. Both GCC 11 and clang 6 will emit the old diagnostics if you pass-std=c++03.Alternatively, recent versions of both GCC and Clang support the warning option-Wextra-semiwhich specifically warns about redundant semicolons.Thanks to HolyBlackCat for mentioning this.",
+        "answer code line": 0,
+        "Accepted Answer length": 808
+    },
+    {
+        "id": "79457581",
+        "title": "`gcc -undef` leads to `cannot find entry symbol _start`; defaulting to x",
+        "time": "2025-02-21 13:47:55Z",
+        "type": "non-code",
+        "language": "c",
+        "code line": 0,
+        "code length": 0,
+        "question length": 1768,
+        "question without crash length": 1408,
+        "Buggy Code": [],
+        "Crash Information": [
+            "/usr/bin/ld: warning: cannot find entry symbol _start; defaulting to 0000000000401020",
+            "...\n /usr/bin/ld: mode elf_x86_64\n+attempt to open /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o succeeded\n+/usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crt1.o\n attempt to open /usr/lib/gcc/x86_64-redhat-linux/14/../../../../lib64/crti.o succeeded\n..."
+        ],
+        "Crash Context": "When runninggcc -undef file.c, on a file containing nothing but amainfunction, I get this warning fromld:There are SO questions about the same warning related to option-nostdliband-nostartfiles, but I did not use them.Even if I manually redefined all of the predefined symbols (retrieved usingecho | gcc -dM -E -) as#defines and add them to my source file, runninggcc -undefon it willstillproduce the same warning.TheGCC documentation about -undefcontains only the following:-undefDo not predefine any system-specific or GCC-specific macros. The standard predefined macros remain defined.And among the predefined macros, I see nothing related to the standard C library, tomain, or to_start.__STDC_HOSTED__is still defined (despite-undef). If I rungcc -undef main.c -c, the resultingmain.ofile is identical despite-undef. So it's clearly something related to linking. But as mentioned before, GCC documentation about-undefdoes not mention anything about linking, andGCC Linking Optionshas no-undefoption.What is going on, and is there a way to use-undefand still be able to compile and link a file using gcc, e.g. by adding other options?Edit: following suggestions, I tried runninggcc -Wl,-verbosewith and without-undef, and the only difference is this:But it's not clear to me why-undefaffects the opening ofcrt1.o.OS: Fedora 40gcc version 14.2.1 20240912 (Red Hat 14.2.1-3) (GCC)GNU ld version 2.41-38.fc40",
+        "Accepted Answer": "This appears to be a GCC bug.  As you can see if you add the-voption, thegcccompiler driver passes-undefas a command line parameter to the linkerld, which makes no sense and causes undesired behavior.  I've reported it asbug 118975.GNUldhas anoption--undefined=symwhich causes the symbolsymto be treated as undefined for the link (e.g. so as to pull in a library module that defines it), but not causing an error if it remains undefined.  In its command line syntax,ldalso:allows the use of one hyphen instead of two in \"long\" option syntax, so-undefis equivalent to--undefaccepts abbreviations for options if they are unambiguous, so--undefis equivalent to--undefinedallows long options to be followed by arguments as the next command line parameter, instead of separated by=.  So--undefined symis equivalent to--undefined=sym.The net effect of passing-undefto the linker, then, is that the next parameter on theldcommand line is treated as if it were the argument of the--undefinedoption.  In my test, that parameter is the path to the startup code fileScrt1.o(apparentlycrt1.oon your installation), which is where the_startsymbol is defined.  So that path is treated as a symbol to be undefined (harmless in itself) and not as a file to be linked.  ThusScrt1.ois omitted from the link and you get a warning about_startbeing undefined; moreover, the output executable won't work.There's an easy workaround: compile and link the file in two steps, and don't pass-undefwhen linking (as it should only affect preprocessing anyway).gcc -c -undef main.c\ngcc main.o",
+        "answer code line": 2,
+        "Accepted Answer length": 1561
+    },
+    {
+        "id": "79195142",
+        "title": "Recent MSVC versions don't treat NAN as constant, workaround?",
+        "time": "2024-11-16 12:29:19Z",
+        "type": "non-code",
+        "language": "c",
+        "code line": 2,
+        "code length": 45,
+        "question length": 693,
+        "question without crash length": 693,
+        "Buggy Code": [
+            "#include <math.h>\n\ndouble x[] = { 1.0, NAN };"
+        ],
+        "Crash Information": [],
+        "Crash Context": "Recent MSVC versions don't seem to treatNANas a constant anymore. The new definition appears to be(__ucrt_int_to_float(0x7FC00000)). The old one was(-(float)(((float)(1e+300 * 1e+300)) * 0.0F)).This causes code like the following to fail to compile witherror C2099: initializer is not a constant:Unfortunately, I don't have direct access to MSVC and I am dealing with this through GitHub CI.Questions:Is this a bug in MSVC or valid behaviour?What is a robust workaround that won't break the code with other compilers?Apparently, MSVC also doesn't accept0.0 / 0.0. The codedouble f() { return 0.0 / 0.0; }fails witherror C2124: divide or mod by zero",
+        "Accepted Answer": "This seems to be a bug in Windows SDK version 10.0.26100.0, which definesNANas a call to__ucrt_int_to_float()instead of as a constant. It is beingtracked here.As a workaround one can define_UCRT_NOISY_NANto enable the legacy definition of theNANmacro, which can be seenhere.Update:according to Microsoftit’s fixed in SDK version 10.0.26100.3916.",
+        "answer code line": 0,
+        "Accepted Answer length": 345
+    },
+    {
+        "id": "79139347",
+        "title": "Multicast works on WSL1, but not WSL2",
+        "time": "2024-10-30 00:30:39Z",
+        "type": "non-code",
+        "language": "c",
+        "code line": 34,
+        "code length": 1410,
+        "question length": 2231,
+        "question without crash length": 2231,
+        "Buggy Code": [
+            "uint32_t  ip_addr_mgrp;\nuint32_t  ip_addr_mifc;\ninet_pton(AF_INET, (char*)\"172.18.19.53\", &ip_addr_mifc);\ninet_pton(AF_INET, (char*)\"239.0.0.1\", &ip_addr_mgrp);\n\nint fd = socket(AF_INET, SOCK_DGRAM, SOCKET_PROTOCOL);\n\nstruct sockaddr_in server_addr;\n\nserver_addr.sin_family = AF_INET;\nserver_addr.sin_addr.s_addr = ip_addr_mifc;\nserver_addr.sin_port = htons(45007);\n\nbind(fd, (struct sockaddr*)&server_addr, sizeof(server_addr));\n\nstruct ip_mreq mreq;\nmreq.imr_multiaddr.s_addr = ip_addr_mgrp;\nmreq.imr_interface.s_addr = ip_addr_mifc;\n\nsetsockopt(fd, IPPROTO_IP, IP_ADD_MEMBERSHIP, (char*)&mreq, sizeof(mreq));\n\n// code to set to non-blocking\n\n// Loop for reading\n\n// Call select()\n// Call FD_ISSET()\n// Call recvfrom()",
+            "uint32_t  ip_addr_mgrp;\nuint32_t  ip_addr_mifc;\ninet_pton(AF_INET, (char*)\"172.18.19.53\", &ip_addr_mifc);\ninet_pton(AF_INET, (char*)\"239.0.0.1\", &ip_addr_mgrp);\n\nint fd = socket(AF_INET, SOCK_DGRAM, SOCKET_PROTOCOL);\n\nstruct ip_mreq mreq;\nmreq.imr_multiaddr.s_addr = ip_addr_mgrp;\nmreq.imr_interface.s_addr = ip_addr_mifc;\n\nsetsockopt(fd, IPPROTO_IP, IP_ADD_MEMBERSHIP, (char*)&mreq, sizeof(mreq));\n\nsetsockopt(fd, IPPROTO_IP, IP_MULTICAST_IF, (const char*)&mreq.imr_interface.s_addr, sizeof(struct in_addr));\n\nchar loop = 1;\nsetsockopt(fd, IPPROTO_IP, IP_MULTICAST_LOOP, (char*)&loop, sizeof(loop));\n\n// code to set to non-blocking\n\n// Loop for sending\n\n// Call sendto() to 237.0.0.1:45007"
+        ],
+        "Crash Information": [],
+        "Crash Context": "I have a small app that is running two threads.One thread sends a UDP multicast packet (to group 239.0.0.1), and the other reads that same multicast packet.When I run this on app on Windows using Visual Studio, it works - the packet is successfully sent and received. I see it on Wireshark. I also have an embedded target where this app ultimately runs, running VxWorks RTOS, and it works on VxWorks as well.I tried it on Linux using WSL2. The sendto() is successful, but the recvfrom() fails. However I do see the packet on Wireshark, and there are no errors reported on Wireshark.I downgraded to WSL1 and it works.Is there something specific to WSL2 that might cause multicast to fail, but work on WSL1, Windows and VxWorks? If I switch to unicast, it works on WSL2.Here are some code snippets:Receive thread:TX thread:",
+        "Accepted Answer": "On Linux, if a socket is bound to a local IP address, it won't be able to receive multicast traffic even if the multicast group is joined.As mentioned in the comments, WSL1 is an API layer over the Windows syscalls while WSL2 is a full Linux virtual machine.  This is why binding to a local interface works on WSL1 but not on WSL2.You can fix this by either binding the socket toINADDR_ANYor to the multicast address in question (239.0.0.1 in this case).",
+        "answer code line": 0,
+        "Accepted Answer length": 454
+    },
+    {
+        "id": "77836548",
+        "title": "library 'gfortran' not found when installing R packages",
+        "time": "2024-01-18 02:23:49Z",
+        "type": "non-code",
+        "language": "c",
+        "code line": 4,
+        "code length": 68,
+        "question length": 532,
+        "question without crash length": 274,
+        "Buggy Code": [
+            "$ which gcc\n/usr/bin/gcc\n$ which gfortran\n/opt/homebrew/bin/gfortran"
+        ],
+        "Crash Information": [
+            "ld: warning: search path '/opt/gfortran/lib/gcc/aarch64-apple-darwin20.0/12.2.0' not found\nld: warning: search path '/opt/gfortran/lib' not found\nld: library 'gfortran' not found\nclang: error: linker command failed with exit code 1 (use -v to see invocation)"
+        ],
+        "Crash Context": "I am installing an R package that relies on gfortran.As below, I get such errors.However, I have gcc and gfortran installed.I also have Xcode downloaded from app store and runxcode-select –-install already.",
+        "Accepted Answer": "As @Till pointed out, I'd install fortran from the macosxr-project space. It seems like a path variable is not set properly on your system. See also thisquestion.If you really want to use the homebrew version of fortran for the use in R make sure that RStudio uses the right path variable. You could follow thisguide. However installing gfortran-12.2-universal.pkg from the link above is a lot less of a pain.",
+        "answer code line": 0,
+        "Accepted Answer length": 409
+    },
+    {
+        "id": "78351290",
+        "title": "gcc is giving a warning for implicit declarition of function when header files are included",
+        "time": "2024-04-19 04:01:52Z",
+        "type": "non-code",
+        "language": "c",
+        "code line": 83,
+        "code length": 1801,
+        "question length": 2889,
+        "question without crash length": 2382,
+        "Buggy Code": [
+            "#include <stdio.h>\n\n#include \"../include/file.h\"\n#include \"../include/parse.h\"\n\nint main(int argc, char** argv)\n{\n    int fd, numEmployees = 0;\n\n    if(argc != 2)\n    {\n        printf(\"Usage: %s <filename>\n\", argv[0]);\n        return 0;\n    }\n\n    fd = open_file_rw(argv[1]);\n    if(fd == -1)\n        return -1;\n    \n    if(parse_file_header(fd, &numEmployees))\n        return -1;\n\n    printf(\"Number of employees stored: %d\n\", numEmployees);\n    \n    return 0;\n}",
+            "#ifdef FILE_H\n#define FILE_H\n\nint open_file_rw(char* filename);\n\n#endif /* FILE_H */",
+            "#ifdef PARSE_H\n#define PARSE_H\n\nstruct dbheader\n{\n    unsigned short version;\n    unsigned short count;\n};\n\nint parse_file_header(int fd, int* numEmployeesOut);\n\n#endif /* PARSE_H */",
+            "#include <stdio.h>\n#include <unistd.h>\n\n#include \"../include/parse.h\"\n\nstruct dbheader_t\n{\n    unsigned short version;\n    unsigned short count;\n};\n\nint parse_file_header(int fd, int* numEmployeesOut)\n{\n    if(fd == -1)\n    {\n        printf(\"Bad file descriptior provided\b\");\n        return -1;\n    }\n\n    struct dbheader_t header = {0};\n    if(read(fd, &header, sizeof(header)) != sizeof(header))\n    {\n        printf(\"Failed to read file header\n\");\n        return -1;\n    }\n\n    *numEmployeesOut = header.count;\n    return 0;\n}",
+            "TARGET := bin/final\nSRC := $(wildcard src/*.c)\nOBJ := $(patsubst src/%*.c, obj/*.c, $(SRC))\nINCLUDE := ../include\n\ndefault: $(TARGET)\n\nclean:\n    rm -f obj/*.o\n    rm -f bin/*\n\n$(TARGET): $(OBJ)\n    gcc -o $@ $?\n\nobj/%.o : src/%.c\n    gcc -c $< -o $@ -I$(INLCUDE)",
+            "#include <stdio.h>\n\n#include <sys/types.h>\n#include <sys/stat.h>\n#include <fcntl.h>\n\n#include \"../include/file.h\"\n\nint open_file_rw(char* filename)\n{\n    int fd = open(filename, O_RDWR);\n    if(fd == -1)\n    {\n        perror(\"open\");\n        return fd;\n    }\n\n    return fd;\n}"
+        ],
+        "Crash Information": [
+            "gcc -o bin/final src/file.c src/main.c src/parse.c\nsrc/main.c: In function \\u2018main\\u2019:\nsrc/main.c:16:14: warning: implicit declaration of function \\u2018open_file_rw\\u2019 [-Wimplicit-function-declaration]\n   16 |         fd = open_file_rw(argv[1]);\n      |              ^~~~~~~~~~~~\nsrc/main.c:20:12: warning: implicit declaration of function \\u2018parse_file_header\\u2019 [-Wimplicit-function-declaration]\n   20 |         if(parse_file_header(fd, &numEmployees))\n      |            ^~~~~~~~~~~~~~~~~"
+        ],
+        "Crash Context": "I learning c, when I compile my program with make it give me a warning for implicit declaration but still runs like it shouldThese are the warnings I get when I try to compile,I have a main file with my Makefile, then I haveincludewith all my headers andsrcwith all my c filesHere is mymain.c,Here isfile.hHere isfile.cHere isparse.h,and here isparse.cand finally here is myMakefile,I know this is a long post, Ive been looking at this for hours and cant figure out whats going wrong, any help is appreciated. Thanks.I tried to build my program using make, but keep getting errors.",
+        "Accepted Answer": "Your header files are broken. You use#ifdef FILE_Hand it should be#ifndef FILE_H. Therefore, the header files are empty, when the compiler sees them.If you suspect that there is something wrong with one of your header files, there are two standard strategies that can help you find the issue.First option: Add#errordirectives to see whether they are processed, and how. Something like this:#error file.h gets included!\n#ifdef FILE_H /* Bug! Wrong! */\n# define FILE_H 1\n\n#error file.h was processed!\n#endifThat will print an error to the console and show you that the file was correctly included.For more complicated issues, it helps to invoke the preprocessor only, like this:$ gcc -c -E program.cThat will print the output of the preprocessor, including filename and line number information to the console.  And you would have seen, that the header file is completely empty for the compiler.To answer your other, implicit question, why the code works although the header file is not processed: It is not necessary to declare functions in C. If you implicitely declare function, the compiler will assume a signature ofint FUNCTIONNAME(), i.e. a function that takes no arguments and returns an integer.It is just not wise to use that \"feature\" because the compiler is not able to check whether the usage of the function is correct and that can lead to problems. And besides, if the function is really missing, the warning from the compiler is usually easier to understand than the warning from the linker.  Try that out by something likeprindf(\"typo\");.",
+        "answer code line": 7,
+        "Accepted Answer length": 1552
+    },
+    {
+        "id": "79329275",
+        "title": "Why does GCC’s static analyser falsely warn that a pointer to an allocated memory block itself stored in an allocated memory block may leak?",
+        "type": "non-code",
+        "language": "c",
+        "code line": 18,
+        "Buggy code": [
+            "#include <stdio.h>\n#include <stdlib.h>\n\nint main()\n{\n    int ***new = malloc(sizeof(int **));\n    *new = malloc(sizeof(int *));\n    **new = malloc(sizeof(int));\n\n    ***new = 2137;\n    printf(\"%i\n\", ***new);\n\n    free(**new);\n    free(*new);\n    free(new);\n\n    return EXIT_FAILURE;\n}"
+        ],
+        "Crash information": [
+            "test2.c: In function ‘main’:\ntest2.c:10:7: warning: leak of ‘malloc(4)’ [CWE-401] [-Wanalyzer-malloc-leak]\n   10 |     ***new = 2137;\n      |       ^~~~\n  ‘main’: events 1-2\n    |\n    |    8 |     **new = malloc(sizeof(int));\n    |      |             ^~~~~~~~~~~~~~~~~~~\n    |      |             |\n    |      |             (1) allocated here\n    |    9 | \n    |   10 |     ***new = 2137;\n    |      |       ~~~~   \n    |      |       |\n    |      |       (2) ‘malloc(4)’ leaks here; was allocated at (1)\n    |"
+        ],
+        "Crash Context": "This code, when compiled using commandgcc -Wall -Wextra -fanalyzer -g -O0 -fsanitize=address,undefined -o test2 test2.cproduces output:I have narrowed down my code do something as simple as this, but still cannot find the problem. I know I am not checking malloc errors, doing so does not help, I have removed them to improve clarity.\nHow do I fix this?",
+        "Accepted Answer": "This is a bug in the analyzer.  If we look closely at the output:|\n    |    8 |     **new = (int*) malloc(sizeof(int));\n    |      |                    ^~~~~~~~~~~~~~~~~~~\n    |      |                    |\n    |      |                    (1) allocated here\n    |    9 | \n    |   10 |     ***new = 2137;\n    |      |       ~~~~          \n    |      |       |\n    |      |       (2) ‘malloc(4)’ leaks here; was allocated at (1)We can see that the assigned pointer it's checking is not the same one where the leak happens.  Specifically, it incorrectly thinks that an assignment to***newoverwrites as assignment to**new.To verify, we can run the code through valgrind, which shows there is no memory leak:==23502== Memcheck, a memory error detector\n==23502== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.\n==23502== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info\n==23502== Command: ./x1\n==23502== \n2137\n==23502== \n==23502== HEAP SUMMARY:\n==23502==     in use at exit: 0 bytes in 0 blocks\n==23502==   total heap usage: 3 allocs, 3 frees, 20 bytes allocated\n==23502== \n==23502== All heap blocks were freed -- no leaks are possible\n==23502== \n==23502== For lists of detected and suppressed errors, rerun with: -s\n==23502== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)When compiling with versions 10 and 11 of gcc with these options, no warnings appear.  The warning you show start with version 12 of gcc."
+    },
+    {
+        "id": "77850769",
+        "title": "FATAL: ThreadSanitizer: unexpected memory mapping when running on Linux Kernels 6.6+",
+        "type": "non-code",
+        "language": "c",
+        "code line": 8,
+        "Buggy code": [
+            "#include <stdio.h>\n\nint main(void)\n{\n    printf(\"Hello, World!\n\");\n}",
+            "clang -o play -fsanitize=thread -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer src/play.c\n./play"
+        ],
+        "Crash information": [],
+        "Crash Context": "The ProblemRecently on Linux Kernels 6.6.6 and higher it was discovered thatthread sanitizer will always lead to this error:FATAL: ThreadSanitizer: unexpected memory mapping 0x5c9bd4d2b000-0x5c9bd4d4b000I can reproduce this by writing a hello world example in CAnd compiling it with tsan + running it on Arch Linux (Kernel 6.7.0) with:This will produce the above error (with different memory addresses).According to the github issue this will also occur in c++ files that just define an empty main() function.The questionWhat are your options for dealing with this?I have only recently started diving deeper into low-level operations and can barelyusethread-sanitizer at my current knowledge levels. ASLR (which appears to be the cause of the problem) is entirely foreign to me, as are options to manipulate it and what the consequences are.The github issue mentions 2 potential workarounds:Disabling ASLR (I only foundthis SO question for this)Reducing ASLR viasudo sysctl vm.mmap_rnd_bits=30I have tried 2. and compiled + ran the example again as described, this did not resolve the issue.I am hesitant to disable ASLR as per 1., as I wouldn't know what the implications of that are or how to \"undo\" that change.What other general options to approach this are out there?",
+        "Accepted Answer": "In this particular case,sudo sysctl vm.mmap_rnd_bits=30is indeed sufficient, but requires a more modern clang version than arch-linux provides by default. The version at the time ofwritingthis edit (16.0.617.0.6) stems fromJune 2023November 2023That release doesnotcontain a fix fromNovember 2023that allows mmap_rnd_bits having a value of 30. This fix will be available with version18.1.0which has only been out since the start of March this year. It may therefore still take a fair bit of time until this fix makes it into the repositories of various distros.However, at least on arch linux you can set this value down to 28 at which point it should work again with 16.0.6 and later. However the implication this appears to have is reduced security of the system (?), it definitely beats shutting ASLR off entirely.You can set it to 28 viasudo sysctl vm.mmap_rnd_bits=28(Check the value viasudo sysctl vm.mmap_rnd_bits).Note that this change isnotpersistent. Once you reboot your machine, you will have to setmmap_rnd_bitsagain to 28.To persist those changes, addvm.mmap_rnd_bits=28to your/etc/sysctl.conffile."
+    },
+    {
+        "id": "79701694",
+        "title": "Unexpected compiler warning - printf format specifiers",
+        "type": "non-code",
+        "language": "c",
+        "code line": 1,
+        "Buggy code": [
+            "typedef long unsigned int uint64_t;"
+        ],
+        "Crash information": [],
+        "Crash Context": "I have the following warning generated by aprintf():warning: format '%llu' expects argument of type 'long long unsigned int', but argument 7 has type 'uint64_t' {aka 'long unsigned int'} [-Wformat=]Although I want to create a warning-free code, I think that the compiler is way too over-zealous. Because:long unsignedis unsigned and has 64 bits (it is there, in the text of the message)long long unsignedis also unsigned, and cannot be shorter than 64 bits (C standard, in comparison tounsigned long), and also cannot have more than 64 bits (hardware limitation, not enough bits in the processor registers).So for any practical purpose,long unsignedandlong long unsignedare actually the same thing, right?Even more, whilelong unsignedcan have 32bits on some platforms (e.g., Widows),long long unsignedis highly unlikely to have another number of bits (than 64).long longwas created especially to support 64 bits.So what is going on? How should I proceed? What should I understand?Side question:Let's assume that the following is true:And let's assume that on some platform,long unsignedbecomes 32 bits, and in that case,long long unsignedis not anymore the same aslong unsigned. But thenuint64_tis not 64 bits anymore - which means that the definition ofuint64_twill have to change to remain 64 bits. So in the end,long long unsignedanduint64_twill still be the same size and sign-ness.So is my thinking correct, that the compiler should not have given me that message at all? Because it is not applicable, no matter how things are, or will be?I currently use Codeblocks with Cygwin C compiler under Windows - in order to havelong unsignedof 64 bits, instead of 32.The command line for compiling (copy-paste):gcc.exe -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wswitch-enum -Wswitch-default -Wmain -pedantic -Wextra -Wall -m64 -O0  -c Z:/_progs/_progsData/cb/myprog.c -o obj/Debug/myprog.o",
+        "Accepted Answer": "The warning underscores a portability issue. Using%llufor auint64_twould have undefined behavior on architectures whereuint64_tis anunsigned longandunsigned long longwould have 128 bits, which would make sense if 128-bit arithmetics are supported.This would not happen on legacy systems wherelongis still 32 bits, but the C Standard does support this possibility.You can fix the code in different ways:use thePRIu64macro defined in<inttypes.h>(quite ugly and convoluted, but this is thecorrectsolution):int print_uint64(uint64_t val) {\n    return printf(\"%\" PRIu64, val);  // a bit cryptic but correct\n}cast the values as(unsigned long long)(ugly and verbose too):int print_uint64(uint64_t val) {\n    return printf(\"%llu\", (unsigned long long)val);\n}use%lu... but this would make your code non portable to legacy architectures wherelongstill has just 32 bits.use your own type for 64-bit intstypedef unsigned long long u64;and you can use%lluon all platforms wherelong longhas 64 bits, and worry about portability to 128 bit systems later:#include <limits.h>\n#include <stdint.h>\n#include <stdio.h>\n\n#if ULLONG_MAX == UINT64_MAX\ntypedef unsigned long long u64;\ntypedef          long long i64;\n#else\n#error \"this platform does not have 64-bit long long types\"\n#endif\n\nint print_u64(u64 val) {\n    return printf(\"%llu\", val);\n}"
+    },
+    {
+        "id": "77256330",
+        "title": "java.lang.NoSuchMethodError: 'org.apache.commons.io.output.UnsynchronizedByteArrayOutputStream$Builder org.apache.poi-poi-ooxml-5.2.4",
+        "time": "2023-10-09 04:51:29Z",
+        "type": "non-code",
+        "language": "java",
+        "code line": 9,
+        "code length": 286,
+        "question length": 1611,
+        "question without crash length": 611,
+        "Buggy Code": [
+            "import org.apache.poi.xssf.usermodel.XSSFWorkbook;\n\npublic class MyReportsExcelExporter {\n    protected XSSFWorkbook workbook;\n    ...\n    public MyReportsExcelExporter() {\n        this.workbook = new XSSFWorkbook(); //Facing issue here, while initializing the workbook.\n    }\n    ...\n}"
+        ],
+        "Crash Information": [
+            "[ERROR] ErrorPageFilter - Forwarding to error page from request [/reports/myapp/myreport] due to exception ['org.apache.commons.io.output.UnsynchronizedByteArrayOutputStream$Builder org.apache.commons.io.output.UnsynchronizedByteArrayOutputStream.builder()']\njava.lang.NoSuchMethodError: 'org.apache.commons.io.output.UnsynchronizedByteArrayOutputStream$Builder org.apache.commons.io.output.UnsynchronizedByteArrayOutputStream.builder()'\n    at org.apache.poi.xssf.usermodel.XSSFWorkbook.newPackage(XSSFWorkbook.java:521) ~[poi-ooxml-5.2.4.jar:5.2.4]\n    at org.apache.poi.xssf.usermodel.XSSFWorkbook.<init>(XSSFWorkbook.java:231) ~[poi-ooxml-5.2.4.jar:5.2.4]\n    at org.apache.poi.xssf.usermodel.XSSFWorkbook.<init>(XSSFWorkbook.java:227) ~[poi-ooxml-5.2.4.jar:5.2.4]\n    at org.apache.poi.xssf.usermodel.XSSFWorkbook.<init>(XSSFWorkbook.java:215) ~[poi-ooxml-5.2.4.jar:5.2.4]\n    at myapp.reports.service.impl.MyReportsExcelExporter.<init>(MyReportsExcelExporter.java:37) ~[classes/:0.0.1-SNAPSHOT]"
+        ],
+        "Crash Context": "I have upgraded fromorg.apache.poi-poi-ooxml-5.2.3toorg.apache.poi-poi-ooxml-5.2.4due toSecurity Violation Threatin5.2.3Now, I am facing run time exception asjava.lang.NoSuchMethodErrorException:Code:Looking at the version change, it seems like a minor upgrade but now existing code has stopped working.What's probably wrong?",
+        "Accepted Answer": "You will need to add/upgradeApache Commons IOdependency version>= 2.12.0.Note:Thebuilder()method present inUnsynchronizedByteArrayOutputStreamclass got introduced from2.12.0version ofcommons-ioonwards.I took the latest dependency ofcommons-iowhich is2.14.0at the time of writing the answer.pom.xml (Maven):<dependencies>\n    <dependency>\n        <groupId>commons-io</groupId>\n        <artifactId>commons-io</artifactId>\n        <version>2.14.0</version>\n    </dependency>\n</dependencies>build.gradle (Gradle):dependencies {\n   implementation 'commons-io:commons-io:2.14.0'\n}It will work.",
+        "answer code line": 10,
+        "Accepted Answer length": 587
+    },
+    {
+        "id": "79102777",
+        "title": "How to resolve \"source value 8 is obsolete\" warning in Android Studio?",
+        "time": "2024-10-18 15:48:29Z",
+        "type": "non-code",
+        "language": "java",
+        "code line": 0,
+        "code length": 0,
+        "question length": 623,
+        "question without crash length": 367,
+        "Buggy Code": [],
+        "Crash Information": [
+            "warning: [options] source value 8 is obsolete and will be removed in a future release\nwarning: [options] target value 8 is obsolete and will be removed in a future release\nwarning: [options] To suppress warnings about obsolete options, use -Xlint:-options."
+        ],
+        "Crash Context": "I'm working on an Android project in Android Studio and I'm getting the following warnings:I understand that these warnings are related to the Java version being used, but I'm not sure how to update the source and target values to fix this issue.How to update the Java source and target compatibility in my project? Or is there another way to suppress these warnings?",
+        "Accepted Answer": "I recently faced the exact issue while working on my Flutter project, and after two days of troubleshooting, I found a solution that worked for me. The problem stems from an incompatibility between the Java Development Kit (JDK) version and the Gradle configuration. Here’s how I resolved it:Downgrade the JDK to Version 17Flutter projects currently work best with JDK 17 for the latest Gradle and Android plugin versions. You can download JDK 17 from the official OpenJDK website.JDK 17 - Setup fileUpdate app/build.gradleEnsure that the compileOptions and kotlinOptions target JDK 17:android {\n    ndkVersion \"25.1.8937393\"\n\n    compileOptions {\n        sourceCompatibility JavaVersion.VERSION_17\n        targetCompatibility JavaVersion.VERSION_17\n    }\n    kotlinOptions {\n        jvmTarget = \"17\"\n    }\n}Update gradle/wrapper/gradle-wrapper.propertiesSet the distributionUrl to a compatible Gradle version, such as 8.10.2:distributionUrl=https\\://services.gradle.org/distributions/gradle-8.10.2-all.zipUpdate settings.gradleEnsure the plugin versions are compatible with JDK 17 and Gradle 8.3.2:id \"com.android.application\" version \"8.3.2\" apply false\nid \"org.jetbrains.kotlin.android\" version \"2.0.20\" apply falseI struggled with these warnings for two days before discovering the solution. It wasn’t immediately clear that the issue lay in the mismatch between Java, Gradle, and plugin versions. By systematically adjusting configurations and testing, I was able to eliminate the warnings and build my project successfully.If you’re facing similar issues, I hope this solution saves you time and frustration! Let me know if you encounter any challenges implementing these changes.",
+        "answer code line": 14,
+        "Accepted Answer length": 1686
+    },
+    {
+        "id": "77225378",
+        "title": "gradle clean fails with \"GradleException: Failed to create Jar file\"",
+        "time": "2023-10-03 20:34:48Z",
+        "type": "non-code",
+        "language": "java",
+        "code line": 8,
+        "code length": 482,
+        "question length": 1529,
+        "question without crash length": 1529,
+        "Buggy Code": [
+            "$ ./gradlew clean\n\nFAILURE: Build failed with an exception.\n\n* What went wrong:\nA problem occurred configuring root project 'myservice'.\n> java.util.concurrent.ExecutionException: org.gradle.api.GradleException: Failed to create Jar file C:\\Users\\me\\.gradle\\caches\\jars-9\b868ab677410c01cf9b5a0e29a035e73\\jackson-core-2.15.2.jar.\n    \nBUILD FAILED in 2s",
+            "$ rm -rf ~/.gradle/caches/jars-9/*lock\nrm: cannot remove '/c/Users/me/.gradle/caches/jars-9/jars-9.lock': Device or resource busy"
+        ],
+        "Crash Information": [],
+        "Crash Context": "I'm seeing a very strange problem with gradle.When I run any command (see clean below), gradle fails with a concurrent exception.This is happening since my latest changes.  Rolling back to a previous commit works fine.The changes are too numerous to describe here but in summary I've restructured the build a bit, based on another project which is working.  And when I say based on, I mean I have simply copied build.gradle, settings.gradle and gradle.properties from that other project.  None of the changes relate to jackson core.I tried removing the lock file but that failed:So I ran./gradlew --stopwhich stopped 2 daemons, and I was able to remove the lock file.  But thecleanstill fails with the same error.I've tried cleaning the.gradledirectory in the project, and I've also tried checking out a new copy of the project.  Same result.So although it seems like a cache error, I can fix it by rolling back to a previous commit (without touching the cache) and if I clear the cache, that doesn't fix it.What's going wrong and how do I fix it?",
+        "Accepted Answer": "The answer was to do witha bug in gradle.  Versions prior to 7.6.2 (?) failed to handle multi-release jar files (ie with multiple binaries built with different Java versions in them).The jackson dependency was such a jar file.  This explains why the previous commit worked consistently, and this one failed consistently.  The project from which I copied the config uses gradle 8.1, which is why it worked there.Solution: upgrade gradle.",
+        "answer code line": 0,
+        "Accepted Answer length": 436
+    },
+    {
+        "id": "79067849",
+        "title": "Flutter 3.24.3 problem with Android Studio Ladybug | 2024.2.1",
+        "time": "2024-10-08 21:33:31Z",
+        "type": "non-code",
+        "language": "java",
+        "code line": 27,
+        "code length": 666,
+        "question length": 2506,
+        "question without crash length": 2506,
+        "Buggy Code": [
+            "android {\n    compileOptions {\n        sourceCompatibility = JavaVersion.VERSION_1_8\n        targetCompatibility = JavaVersion.VERSION_1_8\n    }\n}",
+            "distributionBase=GRADLE_USER_HOME\ndistributionPath=wrapper/dists\nzipStoreBase=GRADLE_USER_HOME\nzipStorePath=wrapper/dists\ndistributionUrl=https\\://services.gradle.org/distributions/gradle-8.3-all.zip",
+            "allprojects {\n    repositories {\n        google()\n        mavenCentral()\n    }\n}\n\nrootProject.buildDir = \"../build\"\nsubprojects {\n    project.buildDir = \"${rootProject.buildDir}/${project.name}\"\n}\nsubprojects {\n    project.evaluationDependsOn(\":app\")\n}\n\ntasks.register(\"clean\", Delete) {\n    delete rootProject.buildDir\n}"
+        ],
+        "Crash Information": [],
+        "Crash Context": "When I update Android studio to last version \"Ladybug 2024.2.1\" an error occur whenever I run application in android emulator or physical phone, this problem shows an error with a specific library but in fact it occur with all libraries, I know that because every library tell me there is an error with, I just try to remove it then try running the code again.This is the error:FAILURE: Build failed with an exception.What went wrong:\nExecution failed for task ':google_sign_in_android:compileDebugJavaWithJavac'.\nCould not resolve all files for configuration ':google_sign_in_android:androidJdkImage'.\nFailed to transform core-for-system-modules.jar to match attributes {artifactType=_internal_android_jdk_image, org.gradle.libraryelements=jar, org.gradle.usage=java-runtime}.\nExecution failed for JdkImageTransform: /Users/zaydahmad/Library/Android/sdk/platforms/android-34/core-for-system-modules.jar.\nError while executing process /Applications/Android Studio.app/Contents/jbr/Contents/Home/bin/jlink with arguments {--module-path /Users/zaydahmad/.gradle/caches/transforms-3/fd4e2b69c2691a24d99d2b3c10c60f94/transformed/output/temp/jmod --add-modules java.base --output /Users/zaydahmad/.gradle/caches/transforms-3/fd4e2b69c2691a24d99d2b3c10c60f94/transformed/output/jdkImage --disable-plugin system-modules}Try:\nRun with --stacktrace option to get the stack trace.\nRun with --info or --debug option to get more log output.\nRun with --scan to get full insights.\nGet more help athttps://help.gradle.org.BUILD FAILED in 9s\nError: Gradle task assembleDebug failed with exit code 1I have update all the libraries to the last version.\nI have remove every library appear with that error, it doesn't work.maybe these files help you solve the problem:android/app/build.gradleandroid/gradle/wrapper/gradle-wrapper.propertiesandroid/build.gradle",
+        "Accepted Answer": "The issue comes from Android Studio Ladybug having bundled a version of Java that isn't fully backward compatible with Flutter's plugin ecosystem. The solution is to separately install a version of Java (such as Java 17) and configure your project to use it.Install Java SDK 17 using your method of choice* (either manually or using a runtime manager such asasdf).Run this command pointing at the location where you installed Java SDK 17:flutter config --jdk-dir <path-to-java-sdk-17-home-directory>(Optional, but some plugins may require it) Open android/app/build.gradle and update your Java compatibility options:android {\n    compileOptions {\n      sourceCompatibility JavaVersion.VERSION_17\n      targetCompatibility JavaVersion.VERSION_17\n    }\n\n    // If using Kotlin\n    kotlinOptions {\n        jvmTarget = JavaVersion.VERSION_17\n    }\n}Further reading:How to fix Android Compilation issues in Android Studio Ladybug.Android build warnings about Java with latest Gradle:source value 8 is obsolete/target value 8 is obsoleteFlutter Android Gradle Migration GuideGradle-Toolchain-Java Compatibility Matrix*: If you install the JDK via Homebrew, you may need to update yourPATHand/orJAVA_HOMEas laid out in @prensj's answer.",
+        "answer code line": 12,
+        "Accepted Answer length": 1229
+    },
+    {
+        "id": "77545551",
+        "title": "Error \"IllegalStateException: No target Validator set\" after upgrade from Spring Boot 3.1.5 to 3.2.0",
+        "time": "2023-11-24 20:33:48Z",
+        "type": "non-code",
+        "language": "java",
+        "code line": 9,
+        "code length": 894,
+        "question length": 1098,
+        "question without crash length": 1098,
+        "Buggy Code": [
+            "java.lang.IllegalStateException: No target Validator set\n    at org.springframework.util.Assert.state(Assert.java:76)\n    at org.springframework.validation.beanvalidation.SpringValidatorAdapter.forExecutables(SpringValidatorAdapter.java:396)\n    at org.springframework.validation.beanvalidation.MethodValidationAdapter.invokeValidatorForArguments(MethodValidationAdapter.java:257)\n    at org.springframework.validation.beanvalidation.MethodValidationAdapter.validateArguments(MethodValidationAdapter.java:240)\n    at org.springframework.web.method.annotation.HandlerMethodValidator.validateArguments(HandlerMethodValidator.java:115)\n    at org.springframework.web.method.annotation.HandlerMethodValidator.applyArgumentValidation(HandlerMethodValidator.java:83)\n    at org.springframework.web.reactive.result.method.InvocableHandlerMethod.lambda$invoke$0(InvocableHandlerMethod.java:164)\n    ..."
+        ],
+        "Crash Information": [],
+        "Crash Context": "After upgrading a reactive application from Spring Boot 3.1.5 to Spring Boot 3.2.0, I get the following error:There is no other change in the code, the exception did not occur before in Spring Boot 3.1.5.",
+        "Accepted Answer": "It is caused by a change of logic in the dependency onspring-boot-starter-validation. In my Spring Boot 3.1.5 applications, I either had not this dependency at all, or had it with thetestscope. Now in spring Boot 3.2.0 it is apparently mandatory. Thepom.xmlfile must contain<dependency>\n    <groupId>org.springframework.boot</groupId>\n    <artifactId>spring-boot-starter-validation</artifactId>\n</dependency>Without this, any controller method with parameters annotated with somejakarta.validation.*annotations, such asjakarta.validation.constraints.NotNull, throws the described exception. The exception is thrown by Spring and the method is not even called at all.",
+        "answer code line": 4,
+        "Accepted Answer length": 666
+    },
+    {
+        "id": "77830835",
+        "title": "Compilation error on List.getFirst(): cannot find symbol? [duplicate]",
+        "time": "2024-01-17 08:09:36Z",
+        "type": "non-code",
+        "language": "java",
+        "code line": 17,
+        "code length": 558,
+        "question length": 2101,
+        "question without crash length": 892,
+        "Buggy Code": [
+            "<properties>\n    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\n    <maven.compiler.source>11</maven.compiler.source>\n    <maven.compiler.target>11</maven.compiler.target>\n    <java.version>11</java.version>\n    <junit5.version>5.8.2</junit5.version>\n</properties>\n...\n<plugin>\n    <groupId>org.apache.maven.plugins</groupId>\n    <artifactId>maven-compiler-plugin</artifactId>\n    <version>3.8.1</version>\n    <configuration>\n        <source>${java.version}</source>\n        <target>${java.version}</target>\n    </configuration>\n</plugin>"
+        ],
+        "Crash Information": [
+            "[ERROR] COMPILATION ERROR : \n[INFO] -------------------------------------------------------------\n[ERROR] /tmp/builds/autocode_133386/src/main/java/com/classes/ArrayRectangles.java:[76,46] cannot find symbol\n  symbol:   method getFirst()\n  location: variable perimeters of type java.util.List<java.lang.Double>\n[INFO] 1 error\n[INFO] -------------------------------------------------------------\n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD FAILURE\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  2.849 s\n[INFO] Finished at: 2024-01-17T07:57:25Z\n[INFO] ------------------------------------------------------------------------\n[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project Classes: Compilation failure\n[ERROR] /tmp/builds/autocode_133386/src/main/java/com/classes/ArrayRectangles.java:[76,46] cannot find symbol\n[ERROR]   symbol:   method getFirst()\n[ERROR]   location: variable perimeters of type java.util.List<java.lang.Double>",
+            "List<Double> perimeters = new ArrayList<>();\n...\ndouble minPerim = perimeters.getFirst(); // error is here"
+        ],
+        "Crash Context": "This question already has answers here:What does a \"Cannot find symbol\" or \"Cannot resolve symbol\" error mean?(19 answers)Closedlast year.Could you detect a problem of compilation? It compiles locally without any errors. But it fails when it was compiled using a distant autocode service over which I have no influence.my codepom file",
+        "Accepted Answer": "The methodgetFirst()has been added to theListinterface starting from JDK 21.It is highly possible that your code compiles locally because you're using a JDK 21, but not on server because the server is using an image with an older JDK where the method is not yet declared.Solutions:(Long term): You upgrade your server to JDK 21(Short term): ReplaceList.getFirst()byList.get(0), paying the right attention to when the list is empty (in that case,get(0)would raise an out of bound exception so you need to check the.size()first and returnnull(or throw an exception, as the current implementation ofgetFirst()does), if the list is empty.",
+        "answer code line": 0,
+        "Accepted Answer length": 634
+    },
+    {
+        "id": "77823240",
+        "title": "Query execution errors after upgrading spring boot 3.2.0 to 3.2.1 - ORA-00933 - command not properly ended",
+        "time": "2024-01-16 02:52:06Z",
+        "type": "non-code",
+        "language": "java",
+        "code line": 58,
+        "code length": 2177,
+        "question length": 2802,
+        "question without crash length": 2802,
+        "Buggy Code": [
+            "org.springframework.dao.InvalidDataAccessResourceUsageException: JDBC exception executing \nSQL [select \n        o1_0.org_id,\n        o1_0.name \n     from organizations o1_0 \n     where (\n            ? is null or \n            trim(BOTH from ?)='' or \n            lower(o1_0.name) like lower(trim(BOTH from ?))\n     ) \n     offset ? rows \n     fetch first ? rows only] \n[ORA-00933: comando SQL command not properly ended]",
+            "<parent>\n        <groupId>org.springframework.boot</groupId>\n        <artifactId>spring-boot-starter-parent</artifactId>\n        <version>3.2.1</version>\n        <relativePath />\n    </parent>\n\n    <properties>\n        <java.version>21</java.version>\n        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\n        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>\n    </properties>\n\n    <dependencies>\n\n        <dependency>\n            <groupId>org.springframework.boot</groupId>\n            <artifactId>spring-boot-starter-data-jpa</artifactId>\n        </dependency>\n        \n        <dependency>\n            <groupId>org.springframework.boot</groupId>\n            <artifactId>spring-boot-starter-security</artifactId>\n        </dependency>\n\n        <dependency>\n            <groupId>org.springframework.boot</groupId>\n            <artifactId>spring-boot-starter-web</artifactId>\n        </dependency>\n        \n        <dependency>\n            <groupId>com.oracle.database.jdbc</groupId>\n            <artifactId>ojdbc11</artifactId>\n        </dependency>\n\n        <dependency>\n            <groupId>org.apache.commons</groupId>\n            <artifactId>commons-lang3</artifactId>\n        </dependency>\n\n    </dependencies>",
+            "@Query(\"select org  \"\n         + \"  from Organization         org     \"\n         + \" where 1 = 1 \"\n         + \"   and ( \"\n         + \"         :#{#request.name} is null \"\n         + \"         or \"\n         + \"         trim(:#{#request.name}) = '' \"\n         + \"         or \"\n         + \"         lower(org.name) like lower(trim(:#{#request.name}))\"\n         + \"       ) \"\n    )\n    Page<Organization> getPageByCriteria(@Param(\"request\") GetOrganizationsRequestDto request, Pageable pageable);"
+        ],
+        "Crash Information": [],
+        "Crash Context": "I have a Java Spring application with lots of queries, which so far have worked until spring boot3.2.0.Recently, after simply changing to spring boot3.2.1, I started getting this kind of error:My pom dependencies look like this:My queries, with some code i cant disclose removed, but still giving errors, has simple conditions:I am connecting tooracle database version 11gDoes anyone have this kind of problem or similar and can help me with it? I suspect it is related to ojdbc not having had an update since the last spring boot version.ThanksEdit: added the pure SQL query performed on the database, according to error log",
+        "Accepted Answer": "Starting from 6.2 Hibernate team have started dropping support of unsupported DBs (please readHibernate ORM 6.2 - DB version support,Remove support for Oracle versions older than 19,Remove support for Oracle versions older than 11.2), however, some of those DBs are still (partially) supported viahibernate-community-dialectsmodule. You need to addhibernate-community-dialectsdependency to your project:<dependency>\n  <groupId>org.hibernate.orm</groupId>\n  <artifactId>hibernate-community-dialects</artifactId>\n</dependency>and, most probably, setspring.jpa.properties.hibernate.dialecttoOracle10ginapplication.properties",
+        "answer code line": 4,
+        "Accepted Answer length": 621
+    },
+    {
+        "id": "78578794",
+        "title": "Execution failed for task ':app:mergeExtDexDebug' As A Result of A Null Pointer Exception",
+        "time": "2024-06-05 04:50:46Z",
+        "type": "non-code",
+        "language": "java",
+        "code line": 57,
+        "code length": 1477,
+        "question length": 3861,
+        "question without crash length": 3022,
+        "Buggy Code": [
+            "plugins {\nid 'com.android.application'\n}\n\nandroid {\nnamespace 'com.example.jurisscan'\ncompileSdk 34\n\ndefaultConfig {\n    applicationId \"com.example.jurisscan\"\n    minSdk 24\n    targetSdk 34\n    versionCode 1\n    versionName \"1.0\"\n\n    testInstrumentationRunner \"androidx.test.runner.AndroidJUnitRunner\"\n}\n\nbuildTypes {\n    release {\nminifyEnabled false\nproguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-   rules.pro'\n    }\n}\n\nbuildFeatures {\n    viewBinding true\n}\n\ncompileOptions {\n    sourceCompatibility JavaVersion.VERSION_1_8\n    targetCompatibility JavaVersion.VERSION_1_8\n}\n}\n\ndependencies {\nimplementation 'androidx.appcompat:appcompat:1.7.0'\nimplementation 'com.google.android.material:material:1.12.0'\nimplementation 'androidx.constraintlayout:constraintlayout:2.1.4'\ntestImplementation 'junit:junit:4.13.2'\nandroidTestImplementation 'androidx.test.ext:junit:1.1.5'\nandroidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'\n}",
+            "// Top-level build file where you can add configuration common to all sub-projects/modules.\nplugins {\nid 'com.android.application' version '8.0.0' apply false\nid 'com.android.library' version '8.0.0' apply false\n}",
+            "pluginManagement {\nrepositories {\n    google()\n    mavenCentral()\n    gradlePluginPortal()\n}\n}\ndependencyResolutionManagement {\nrepositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)\nrepositories {\n    google()\n    mavenCentral()\n}\n}\nrootProject.name = \"JurisScan\"\ninclude ':app'"
+        ],
+        "Crash Information": [
+            "Task :app:mergeExtDexDebug FAILED\n    AGPBI: {\"kind\":\"error\",\"text\":\"java.lang.NullPointerException\",\"sources\":\n\n    Execution failed for task ':app:mergeExtDexDebug'.\n        > Could not resolve all files for configuration ':app:debugRuntimeClasspath'.\n           > Failed to transform appcompat-resources-1.7.0.aar (androidx.appcompat:appcompat-            \n      > Execution failed for DexingNoClasspathTransform: \n         > Error while dexing.\n   > Failed to transform appcompat-1.7.0.aar (androidx.appcompat:appcompat:1.7.0) to match \n         > Error while dexing.\n\n* Try:\n> Run with --info or --debug option to get more log output.\n> Run with --scan to get full insights.\n\n* Exception is:\norg.gradle.api.tasks.TaskExecutionException: Execution failed for task ':app:mergeExtDexDebug'.\n    \nCaused by: java.lang.NullPointerException"
+        ],
+        "Crash Context": "I’m making an app that displays PDF's in android studio it loads the files and then displays them via an external library I haven't fully implemented the display feature as of yet mainly due to the fact that I have been receiving the following error when running my applicationExecution failed for task ':app:mergeExtDexDebug'.and the following Exception:java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"<parameter1>\" is nullSo far I have only built out the initial features such as the Splash Screen, a main screen for the upload and one screen for the PDF display. I have added the part where the user can click the upload button and it will provide the Intent and standard PDF dialogue for android and receive the file. However when I test the code up until this point it gives me this error its quite weird and showed up abruptly as it didn’t show before and I suspect it has something to do with the config files.Here is the stack trace of the error:These are the gradle filesApp Level:Project Level:Project Settings:From what I understood the stack trace showed that this was at its core some Null Pointer Exception somewhere in app-compact resources jar that occurs during the dexing process while the application build's. I tried fiddling with the config files updating the compile sdk's trying to clear caches and restart and rebuild a few times but nothing has worked as of yet.I have been stuck on this issue for some time now if anyone has any thoughts on something that might help would really appreciate it.",
+        "Accepted Answer": "Hi Everyone i guess the current the solution is to downgrade the verison of androidx.appcompact to 1.6.1 as 1.7.0 is expericing isssues such as this",
+        "answer code line": 0,
+        "Accepted Answer length": 148
+    },
+    {
+        "id": "79326623",
+        "title": "Error after updating logback to version ^1.5.13",
+        "time": "2025-01-03 13:40:28Z",
+        "type": "non-code",
+        "language": "java",
+        "code line": 0,
+        "code length": 0,
+        "question length": 736,
+        "question without crash length": 408,
+        "Buggy Code": [],
+        "Crash Information": [
+            "Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat\n...\nCaused by: org.apache.catalina.LifecycleException: Failed to start component [ch.qos.logback.access.tomcat.LogbackValve[null]]\n...\nCaused by: java.lang.NoClassDefFoundError: ch/qos/logback/core/boolex/JaninoEventEvaluatorBase"
+        ],
+        "Crash Context": "I recently updatelogback-classicandlogback-corefrom version 1.5.8 to version 1.5.15 in order to fix some vulnerabilities. However, after doing that I couldn't start the application and I got the following error:I did find out thatJaninoEventEvaluatorBasewas removed as discussedhere, but I still coudln't find a way to fix this error, even after trying to recreate the evaluator.How can I solve this problem?",
+        "Accepted Answer": "Taking a look at the stacktrace I found out that the problem was being originated from the packagelogback-accessat the classLogbackAccessDefaultNestedComponentRegistryRuleswhich was registeringJaninoEventEvaluatorin version2.0.3. I tried to update it to2.0.5, which shouldn't have the line that used janino, but the dependency coudln't be found. Later I found out that it was renamed fromch.qos.logback.access:commontoch.qos.logback.access:logback-access-common.In the end, the solution was to updatelogback-accessto the new version and the new package name.implementation(\"ch.qos.logback.access:common:2.0.3\")\nimplementation(\"ch.qos.logback.access:tomcat:2.0.3\")toimplementation(\"ch.qos.logback.access:logback-access-common:2.0.5\")\nimplementation(\"ch.qos.logback.access:logback-access-tomcat:2.0.5\")",
+        "answer code line": 4,
+        "Accepted Answer length": 800
+    },
+    {
+        "id": "77932043",
+        "title": "How to fix : [options] source value 8 is obsolete and will be removed in a future release and MainActivity.java uses or overrides a deprecated API",
+        "time": "2024-02-03 12:17:45Z",
+        "type": "non-code",
+        "language": "java",
+        "code line": 152,
+        "code length": 6239,
+        "question length": 6621,
+        "question without crash length": 6621,
+        "Buggy Code": [
+            "plugins {\n    id (\"com.android.application\")\n    id (\"com.google.gms.google-services\")\n    id(\"com.google.android.libraries.mapsplatform.secrets-gradle-plugin\")\n    //id(\"com.google.secrets_gradle_plugin\" version \"0.5\")\n}\n\nandroid {\n    namespace = \"com.example.graca\"\n    compileSdk = 34\n\n    defaultConfig {\n        applicationId = \"com.example.graca\"\n        minSdk = 24\n        targetSdk = 34\n        versionCode = 1\n        versionName = \"1.0\"\n\n        testInstrumentationRunner = \"androidx.test.runner.AndroidJUnitRunner\"\n    }\n\n    buildTypes {\n        \n        release {\n            isMinifyEnabled = false\n            proguardFiles(\n                getDefaultProguardFile(\"proguard-android-optimize.txt\"),\n                \"proguard-rules.pro\"\n            )\n\n        }\n    }\n\n    compileOptions {\n        sourceCompatibility = JavaVersion.VERSION_1_8\n        targetCompatibility = JavaVersion.VERSION_1_8\n        encoding=\"UTF-8\"\n\n    }\n    buildFeatures {\n        viewBinding = true\n    }\n\n}\n\n\ndependencies {\n\n    implementation(\"androidx.appcompat:appcompat:1.6.1\")\n    implementation(\"com.google.android.material:material:1.8.0\")\n    implementation(\"androidx.constraintlayout:constraintlayout:2.1.4\")\n    implementation(\"androidx.legacy:legacy-support-v4:1.0.0\")\n    implementation(\"androidx.lifecycle:lifecycle-livedata-ktx:2.7.0\")\n    implementation(\"androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0\")\n    testImplementation(\"junit:junit:4.13.2\")\n    androidTestImplementation(\"androidx.test.ext:junit:1.1.5\")\n    androidTestImplementation(\"androidx.test.espresso:espresso-core:3.5.1\")\n\n\n\n    //firebase sdk\n    implementation(platform(\"com.google.firebase:firebase-bom:32.7.0\"))\n    implementation(\"com.google.firebase:firebase-analytics\")\n    implementation(\"com.google.firebase:firebase-auth:22.1.2\")\n    implementation(\"com.google.firebase:firebase-firestore:24.8.1\")\n    implementation(\"com.google.firebase:firebase-storage:20.2.1\")\n\n\n    //places sdk\n    //mplementation (\"com.google.android.gms:play-services-maps:17.0.0\")\n    implementation (\"com.google.maps.android:android-maps-utils:2.3.0\")\n    implementation(\"androidx.fragment:fragment:1.6.2\")\n    implementation(\"com.google.android.gms:play-services-maps:17.0.1\")\n    implementation (\"com.google.android.libraries.places:places:3.3.0\")\n\n\n}",
+            "buildscript {\n    repositories {\n        google()\n        mavenCentral()\n\n        // Android Build Server\n        maven { url = uri(\"../nowinandroid-prebuilts/m2repository\") }\n        gradle.projectsEvaluated{\n            tasks.withType<Test>{\n\n                //options.encoding=(\"UTF-8\")\n                (\"-Xlint:deprecation\")\n                (\"-Xlint:unchecked\")\n            }\n        }\n    }\n    dependencies {\n        classpath (\"com.google.gms:google-services:4.4.0\")\n    }\n\n}",
+            "public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {\n\n    private static final float END_SCALE = 0.7f;\n\n    DrawerLayout drawLayouty;\n    NavigationView navigationView;\n    ConstraintLayout contentLayout;\n\n    ImageView menuIcon;\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        super.onCreate(savedInstanceState);\n        setContentView(R.layout.activity_main);\n\n        contentLayout = findViewById(R.id.contentLayout);\n\n       drawLayouty = findViewById(drawer_layout);\n        navigationView = findViewById(R.id.nav_view);\n        menuIcon = findViewById(R.id.menu_icon);\n\n        navigationDrawer();\n\n        if (savedInstanceState == null) {\n\n            getSupportFragmentManager().beginTransaction().replace(R.id.frag_container,\n                    new MapsFragment()).commit();\n\n            navigationView.setCheckedItem(R.id.nav_explore);\n\n        }\n    }\n\n    private void navigationDrawer() {\n\n        navigationView.bringToFront();\n        navigationView.setNavigationItemSelectedListener(this);\n        navigationView.setCheckedItem(R.id.nav_explore);\n\n        menuIcon.setOnClickListener(view -> {\n            if (drawLayouty.isDrawerVisible(GravityCompat.START)) {\n                drawLayouty.closeDrawer(GravityCompat.START);\n            } else {\n                drawLayouty.openDrawer(GravityCompat.START);\n            }\n        });\n\n        animateNavigationDrawer();\n    }\n\n    private void animateNavigationDrawer() {\n\n        drawLayouty.setScrimColor(getResources().getColor(R.color.blue_gray_700));\n\n        drawLayouty.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {\n            @Override\n            public void onDrawerSlide(@NonNull View drawerView, float slideOffset) {\n\n                final float diffScaledOffset = slideOffset * (1 - END_SCALE);\n                final float offsetScale = 1 - diffScaledOffset;\n                contentLayout.setScaleX(offsetScale);\n                contentLayout.setScaleY(offsetScale);\n                \n                final float xOffset = drawerView.getWidth() * slideOffset;\n                final float xOffsetDiff = contentLayout.getWidth() * diffScaledOffset / 2;\n                final float xTranslation = xOffset - xOffsetDiff;\n                contentLayout.setTranslationX(xTranslation);\n\n            }\n        });\n    }\n\n    @Override\n    public void onBackPressed() {\n\n        if (drawLayouty.isDrawerVisible(GravityCompat.START)) {\n            drawLayouty.closeDrawer(GravityCompat.START);\n        } else {\n            super.onBackPressed();\n        }",
+            "}\n\n    @Override\n    public boolean onNavigationItemSelected(@NonNull MenuItem item) {\n        if (item.getItemId() == R.id.nav_explore) {\n            getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, new MapsFragment()).commit();\n        }\n        else if (item.getItemId() == R.id.nav_profile) {\n            getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, new PerfilFragment()).commit();\n        }\n        else if (item.getItemId() == R.id.nav_share) {\n            Toast.makeText(this, \"Shared\", Toast.LENGTH_SHORT).show();\n        }\n        else if (item.getItemId() == R.id.nav_rate_us) {\n            Toast.makeText(this, \"Rated\", Toast.LENGTH_SHORT).show();\n        }\n\n        drawLayouty.closeDrawer(GravityCompat.START);\n        return true;\n    }\n\n\n\n}"
+        ],
+        "Crash Information": [],
+        "Crash Context": "I'm developing an application that maps some areas with up to 1.5km, when I compile the code it  presents errors about source value 8 is obsolete and will be removed in a future release, To suppress warnings about obsolete options, use -Xlint:-options and  Recompile with -Xlint:deprecation for details, MainActivity.java uses or overrides a deprecated API.compileDebugJavaWithJavac",
+        "Accepted Answer": "Change the Java version you're targeting:sourceCompatibility = JavaVersion.VERSION_1_8\ntargetCompatibility = JavaVersion.VERSION_1_8",
+        "answer code line": 2,
+        "Accepted Answer length": 132
+    },
+    {
+        "id": "79278490",
+        "title": "Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK",
+        "type": "non-code",
+        "language": "java",
+        "code line": 18,
+        "Buggy code": [
+            "<plugin>\n    <groupId>org.apache.maven.plugins</groupId>\n    <artifactId>maven-dependency-plugin</artifactId>\n    <executions>\n        <execution>\n            <goals>\n                <goal>properties</goal>\n            </goals>\n        </execution>\n    </executions>\n</plugin>\n<plugin>\n    <groupId>org.apache.maven.plugins</groupId>\n    <artifactId>maven-surefire-plugin</artifactId>\n    <configuration>\n        <argLine>@{argLine} -javaagent:${org.mockito:mockito-core:jar}</argLine>\n    </configuration>\n</plugin>"
+        ],
+        "Crash information": [
+            "Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3\nWARNING: A Java agent has been loaded dynamically (/Users/lcnicolau/.m2/repository/net/bytebuddy/byte-buddy-agent/1.15.10/byte-buddy-agent-1.15.10.jar)\nWARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning\nWARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information\nWARNING: Dynamic loading of agents will be disallowed by default in a future release\nOpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended"
+        ],
+        "Crash Context": "I get this warning while testing in Spring Boot:Following the link at the end of the first line, it will ask you toadd Mockito as an agent to your build:However, the warning is still displayed.Using:Spring Boot 3.4.0Apache Maven 3.9.9OpenJDK 21.0.4",
+        "Accepted Answer": "Finally fixed, both in command line and IDE (IntelliJ IDEA). There are two different warnings, so the fix comes in two parts, you can try each argument on its own to see the effect:<plugin>\n    <groupId>org.apache.maven.plugins</groupId>\n    <artifactId>maven-surefire-plugin</artifactId>\n    <configuration>\n        <argLine>\n            -javaagent:${settings.localRepository}/org/mockito/mockito-core/${mockito.version}/mockito-core-${mockito.version}.jar\n            -Xshare:off\n        </argLine>\n    </configuration>\n</plugin>No need for-XX:+EnabledDynamicAgentLoadingormaven-dependency-plugin.All the credit goes tothisandthisanswers.Also, take a look atthisto understand why some configuration might only work for the build tool or the IDE. So you should use a neutral configuration, otherwise you will need a different configuration for each."
+    },
+    {
+        "id": "79160929",
+        "title": "Execution failed for task ':path_provider_android:compileDebugJavaWithJavac'",
+        "type": "non-code",
+        "language": "java",
+        "code line": 45,
+        "Buggy code": [
+            "plugins {\n        id \"com.android.application\"\n        id \"kotlin-android\"\n        // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.\n        id \"dev.flutter.flutter-gradle-plugin\"\n    }\n    \n    android {\n        namespace = \"com.example.new_flutter\"\n        compileSdk = flutter.compileSdkVersion\n        ndkVersion = flutter.ndkVersion\n    \n        compileOptions {\n            sourceCompatibility = JavaVersion.VERSION_1_8\n            targetCompatibility = JavaVersion.VERSION_1_8\n        }\n    \n        kotlinOptions {\n            jvmTarget = JavaVersion.VERSION_1_8\n        }\n    \n        defaultConfig {\n            // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).\n            applicationId = \"com.example.new_flutter\"\n            // You can update the following values to match your application needs.\n            // For more information, see: https://flutter.dev/to/review-gradle-config.\n            minSdk = flutter.minSdkVersion\n            targetSdk = flutter.targetSdkVersion\n    //        multiDexEnabled true\n            versionCode = flutter.versionCode\n            versionName = flutter.versionName\n        }\n    \n        buildTypes {\n            release {\n                // TODO: Add your own signing config for the release build.\n                // Signing with the debug keys for now, so `flutter run --release` works.\n                signingConfig = signingConfigs.debug\n            }\n        }\n    }\n    \n    flutter {\n        source = \"../..\"\n    }"
+        ],
+        "Crash information": [
+            "Launching lib\\main.dart on AOSP on IA Emulator in debug mode...\n    Running Gradle task 'assembleDebug'...\n    \n    FAILURE: Build failed with an exception.\n    \n    * What went wrong:\n    Execution failed for task ':path_provider_android:compileDebugJavaWithJavac'.\n    > Could not resolve all files for configuration ':path_provider_android:androidJdkImage'.\n       > Failed to transform core-for-system-modules.jar to match attributes {artifactType=_internal_android_jdk_image, org.gradle.libraryelements=jar, org.gradle.usage=java-runtime}.\n          > Execution failed for JdkImageTransform: C:\\Users\\Mr. Wolfe\\AppData\\Local\\Android\\sdk\\platforms\\android-34\\core-for-system-modules.jar.\n             > Error while executing process C:\\Program Files\\Android\\Android Studio\\jbr\bin\\jlink.exe with arguments {--module-path C:\\Users\\Mr. Wolfe\\.gradle\\caches\transforms-3\\4a46fc89ed5f9adfe3afebf74eb8bfeb\transformed\\output\temp\\jmod --add-modules java.base --output C:\\Users\\Mr. Wolfe\\.gradle\\caches\transforms-3\\4a46fc89ed5f9adfe3afebf74eb8bfeb\transformed\\output\\jdkImage --disable-plugin system-modules}\n    \n    * Try:\n    > Run with --stacktrace option to get the stack trace.\n    > Run with --info or --debug option to get more log output.\n    > Run with --scan to get full insights.\n    > Get more help at https://help.gradle.org.\n    \n    BUILD FAILED in 9s\n    Error: Gradle task assembleDebug failed with exit code 1"
+        ],
+        "Crash Context": "I am having this problem with my android studio, so anytime I ran the actual default flutter project in android studio it runs. as soon as I add packages in the pubspec.yaml I get errors. I am trying to run a project, this project has been running so well for sometime now. all of a sudden when I come back to the project and run it I get this weird error. I asked ChatGPT and it said it was a jdk incompatibility problem. this is the error.this is what my app/build.gradile looks like;",
+        "Accepted Answer": "Since last 5 days I have the same issue. It is not related to android studio. I have this issue in VS code as well. Could you find a solution. I couldn't yet. While adding some packages this issue occurs. e.g. give, google fonts, etc.FAILURE: Build failed with an exception.\n\n* What went wrong:\nExecution failed for task ':path_provider_android:compileDebugJavaWithJavac'.\n> Could not resolve all files for configuration ':path_provider_android:androidJdkImage'.\n   > Failed to transform core-for-system-modules.jar to match attributes {artifactType=_internal_android_jdk_image, org.gradle.libraryelements=jar, org.gradle.usage=java-runtime}.\n      > Execution failed for JdkImageTransform: C:\\Users\\aksha\\AppData\\Local\\Android\\sdk\\platforms\\android-34\\core-for-system-modules.jar.\n         > Error while executing process C:\\Program Files\\Android\\Android Studio\\jbr\bin\\jlink.exe with arguments {--module-path C:\\Users\\aksha\\.gradle\\caches\transforms-3\\4a46fc89ed5f9adfe3afebf74eb8bfeb\transformed\\output\temp\\jmod --add-modules java.base --output C:\\Users\\aksha\\.gradle\\caches\transforms-3\\4a46fc89ed5f9adfe3afebf74eb8bfeb\transformed\\output\\jdkImage --disable-plugin system-modules}\n\n* Try:\n> Run with --stacktrace option to get the stack trace.\n> Run with --info or --debug option to get more log output.\n> Run with --scan to get full insights.\n> Get more help at https://help.gradle.org.\n\nBUILD FAILED in 8s\nError: Gradle task assembleDebug failed with exit code 1I tried creating a new project, and when adding some packages this issue occurs even for counter app.UPDATE:https://github.com/flutter/flutter/issues/156558This solved my issue.https://github.com/flutter/flutter/issues/156304#issuecomment-2397707812What's done here:Open android/app/build.gradle and change:android {\n        ndkVersion = \"25.1.8937393\"\n        ...\n   \n    compileOptions {\n      sourceCompatibility JavaVersion.VERSION_17\n      targetCompatibility JavaVersion.VERSION_17\n    }\n\n    kotlinOptions {\n        jvmTarget = JavaVersion.VERSION_17\n    }Open android/gradle/wrapper/gradle-wrapper.properties and change:distributionUrl=https\\://services.gradle.org/distributions/gradle-8.4-all.zipOpen android/settings.gradle and change:id \"com.android.application\" version \"8.3.1\" apply false"
+    },
+    {
+        "id": "77834788",
+        "title": "JDBC and SQLite - No suitable driver found no matter what I try",
+        "type": "non-code",
+        "language": "java",
+        "code line": 30,
+        "Buggy code": [
+            "DataBase.java\nDataBase.class\ndatabase.db\nsqlite-jdbc-3.44.1.0.jar",
+            "import java.sql.Connection;\nimport java.sql.DriverManager;\nimport java.sql.SQLException;\n\npublic class DataBase {\n    public static void connect() {\n        Connection conn = null;\n        try {\n            String url = \"jdbc:sqlite:database.db\";\n            conn = DriverManager.getConnection(url);\n            \n            System.out.println(\"Connection is established\");\n            \n            conn.close();\n            System.out.println(\"Connection closed.\");\n\n        } catch (SQLException e) {\n            System.out.println(e.getMessage());\n        }\n    } // End method connect\n\n    public static void main(String[] args) {\n         connect();\n\n    } // End of main method\n} // End of class"
+        ],
+        "Crash information": [],
+        "Crash Context": "I try to make a simple Java program and connect to a SQLite database for learning purposes. But no matter what I try I cannot succeed. I always getNo suitabe driver found for jdbc:sqlite:database.db. And yet it should be so simple. I have already tried numerous drivers fromMaven repository.I have read up and I understand the theory: The JDBC API deals with the communication to the JDBC manager, while the JDBC driver deals with the communication to the database. I also understand that I have to add a classpath to the .jar file containing the database driver when I run the compiled class file.As explained here for example.Some tutorials claim there is a need to register the driver withClass.forName()butOracle docssays:Applications no longer need to explicitly load JDBC drivers using Class.forName()]Also, the SQLite tutorials that I have followed never register the driver before runningDriverManager.getConnection(url);Example sqlitetutorial.netIn my directoryE:\\ProjectI have these files:When I run the compiled class file, I usejava -cp \".;sqlite-jdbc-3.44.1.0.jar\" DataBasein the terminal window (Powershell)And here is my code:I would appreciate any help I could get to push me forward.I suppose it has to do with the .jar file not being found but I have tried every possible way: Putting copies of the .jar file everywhere in different directories, renaming it to make it simpler, adding multiple directories when adding the class path, etc. I have no clue left of what could be missing.Also, when I try to do the same in VSCode, by adding the .jar file under \"referenced libraries\", it still doesn't work.",
+        "Accepted Answer": "The problem is that the SQLite JDBC driver also requires theslf4j-api-1.7.36.jar, as detailed in the README on itsGitHub repository:Downloadsqlite-jdbc-3.44.1.0.jar then append this jar file into your classpath.Downloadslf4j-api-1.7.36.jar then append this jar file into your classpath.Open a SQLite database connection from your code. (see the example below)Example usageAssumingsqlite-jdbc-3.44.1.0.jarandslf4j-api-1.7.36.jarare\nplaced in the current directory.> javac Sample.java\n> java -classpath \".;sqlite-jdbc-3.44.1.0.jar;slf4j-api-1.7.36.jar\" Sample   # in WindowsIn other words, you need to also putslf4j-api-1.7.36.jarin that directory and use:java -cp \".;sqlite-jdbc-3.44.1.0.jar;slf4j-api-1.7.36.jar\" DataBaseOn my machine this will make it work:D:\temp> java -cp \".;sqlite-jdbc-3.44.1.0.jar;slf4j-api-1.7.36.jar\" DataBase\nSLF4J: Failed to load class \"org.slf4j.impl.StaticLoggerBinder\".\nSLF4J: Defaulting to no-operation (NOP) logger implementation\nSLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.\nConnection is established\nConnection closed.If you had explicitly added aClass.forName(\"org.sqlite.JDBC\")to your application, you would have been able to diagnose this, because without theslf4-api-1.7.36.jarthat would result in (I addedClass.forNameto themain):Exception in thread \"main\" java.lang.NoClassDefFoundError: org/slf4j/LoggerFactory\n        at org.sqlite.JDBC.<clinit>(JDBC.java:26)\n        at java.base/java.lang.Class.forName0(Native Method)\n        at java.base/java.lang.Class.forName(Class.java:375)\n        at DataBase.main(DataBase.java:23)\nCaused by: java.lang.ClassNotFoundException: org.slf4j.LoggerFactory\n        at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)\n        at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)\n        at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)\n        ... 4 moreSo, although explicit loading of the driver is no longer needed, it can give additional troubleshooting information."
+    }
+]
