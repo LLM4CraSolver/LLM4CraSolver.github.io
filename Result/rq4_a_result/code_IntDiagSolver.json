@@ -1,0 +1,391 @@
+[
+    {
+        "id": 12937410,
+        "title": "Conditional operators in Java throw an unexpected NullPointerException",
+        "exception_type": "NullPointerException",
+        "type": "code",
+        "code line": 10,
+        "GPT4": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": ""
+        },
+        "CodeLlama": {
+            "locate": "1",
+            "repair": "0",
+            "final_solution_nums": "1",
+            "final_solution_rounds": ""
+        },
+        "Claude": {
+            "locate": "1",
+            "repair": "0",
+            "final_solution_nums": "5",
+            "final_solution_rounds": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "5",
+            "final_solution_rounds": "3"
+        },
+        "Qwen3-coder": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "4",
+            "final_solution_rounds": "1"
+        }
+    },
+    {
+        "id": 23096006,
+        "title": "Multiple AsyncTask, ConcurrentModificationException. Help! - Android",
+        "exception_type": "ConcurrentModificationException",
+        "type": "code",
+        "code line": 100,
+        "GPT4": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": ""
+        },
+        "CodeLlama": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "2"
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "3",
+            "final_solution_rounds": "2"
+        },
+        "Qwen3-coder": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "3",
+            "final_solution_rounds": "1"
+        }
+    },
+    {
+        "id": 22050636,
+        "title": "IllegalStateException Java Google Maps marker",
+        "exception_type": "IllegalStateException",
+        "type": "code",
+        "code line": 101,
+        "GPT4": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": ""
+        },
+        "CodeLlama": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": ""
+        },
+        "Claude": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1"
+        },
+        "Qwen3-coder": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "2"
+        }
+    },
+    {
+        "id": 30250454,
+        "title": "NullPointerException caused by Reading from File used for indexing using Google Guava",
+        "exception_type": "NullPointerException",
+        "type": "code",
+        "code line": 100,
+        "GPT4": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": ""
+        },
+        "CodeLlama": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1"
+        },
+        "Claude": {
+            "locate": "0",
+            "repair": "0",
+            "final_solution_nums": "",
+            "final_solution_rounds": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1"
+        },
+        "Qwen3-coder": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1"
+        }
+    },
+    {
+        "id": 30724042,
+        "title": "java.sql.SQLException: ORA-01830: date format picture ends before converting entire input string",
+        "exception_type": "SQLException",
+        "type": "code",
+        "code line": 30,
+        "GPT4": {
+            "locate": "1",
+            "repair": "0",
+            "final_solution_nums": "4",
+            "final_solution_rounds": ""
+        },
+        "CodeLlama": {
+            "locate": "1",
+            "repair": "0",
+            "final_solution_nums": "1",
+            "final_solution_rounds": ""
+        },
+        "Claude": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1"
+        },
+        "Qwen3-coder": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "3",
+            "final_solution_rounds": "1"
+        }
+    },
+    {
+        "id": 68199510,
+        "title": "Getting java.lang.NoClassDefFoundError: org/apache/catalina/connector/Connector in wildFly 21.x",
+        "exception_type": "NoClassDefFoundError",
+        "type": "code",
+        "code line": 30,
+       "GPT4": {
+            "locate": "1",
+            "repair": "0",
+            "final_solution_nums": "2",
+            "final_solution_rounds": ""
+        },
+        "CodeLlama": {
+            "locate": "0",
+            "repair": "",
+            "final_solution_nums": "",
+            "final_solution_rounds": ""
+        },
+        "Claude": {
+            "locate": "0",
+            "repair": "",
+            "final_solution_nums": "",
+            "final_solution_rounds": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1"
+        },
+        "Qwen3-coder": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "1"
+        }
+    },
+    {
+        "id": 22913796,
+        "title": "Apache Camel: No rollback after RuntimeException",
+        "exception_type": "RuntimeException",
+        "type": "code",
+        "code line": 50,
+        "GPT4": {
+            "locate": "0",
+            "repair": "0",
+            "final_solution_nums": "",
+            "final_solution_rounds": ""
+        },
+        "CodeLlama": {
+            "locate": "0",
+            "repair": "0",
+            "final_solution_nums": "",
+            "final_solution_rounds": ""
+        },
+        "Claude": {
+            "locate": "",
+            "repair": "",
+            "final_solution_nums": "",
+            "final_solution_rounds": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1"
+        },
+        "Qwen3-coder": {
+            "locate": "1",
+            "repair": "0",
+            "final_solution_nums": "6",
+            "final_solution_rounds": "3"
+        }
+    },
+    {
+        "id": 44475241,
+        "title": "java.lang.ClassCastException while Adding Permission in Service class to Fetch Location",
+        "exception_type": "ClassCastException",
+        "type": "code",
+        "code line": 100,
+        "GPT4": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": ""
+        },
+        "CodeLlama": {
+            "locate": "0",
+            "repair": "0",
+            "final_solution_nums": "",
+            "final_solution_rounds": ""
+        },
+        "Claude": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "",
+            "final_solution_rounds": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1"
+        },
+        "Qwen3-coder": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1"
+        }
+    },
+    {
+        "id": 65084069,
+        "title": "Can't pass assertThrows, instead get java.lang.NoSuchMethodError",
+        "exception_type": "NoSuchMethodError",
+        "type": "code",
+        "code line": 30,
+        "GPT4": {
+            "locate": "0",
+            "repair": "0",
+            "final_solution_nums": "",
+            "final_solution_rounds": ""
+        },
+        "CodeLlama": {
+            "locate": "0",
+            "repair": "0",
+            "final_solution_nums": "",
+            "final_solution_rounds": ""
+        },
+        "Claude": {
+            "locate": "0",
+            "repair": "0",
+            "final_solution_nums": "",
+            "final_solution_rounds": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1"
+        },
+        "Qwen3-coder": {
+            "locate": "0",
+            "repair": "0",
+            "final_solution_nums": "3",
+            "final_solution_rounds": "3"
+        }
+    },
+    {
+        "id": 6678257,
+        "title": "ANTLR: Syntax Errors are ignored when running parser programmatically",
+        "exception_type": "SyntaxError",
+        "type": "code",
+        "code line": 50,
+        "GPT4": {
+            "locate": "1",
+            "repair": "0",
+            "final_solution_nums": "2",
+            "final_solution_rounds": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1"
+        },
+        "Qwen3-coder": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "4",
+            "final_solution_rounds": "1"
+        }
+    },
+    {
+        "id": 25751845,
+        "title": "TTransportException Exception while working with Apache Thrift",
+        "exception_type": "TTransportException",
+        "type": "code",
+        "code line": 50,
+        "GPT4": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": ""
+        },
+        "CodeLlama": {
+            "locate": "0",
+            "repair": "0",
+            "final_solution_nums": "",
+            "final_solution_rounds": ""
+        },
+        "Claude": {
+            "locate": "0",
+            "repair": "0",
+            "final_solution_nums": "",
+            "final_solution_rounds": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1"
+        },
+        "Qwen3-coder": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1"
+        }
+    }
+]
