@@ -8,10 +8,11 @@ We focus on crash bugs in the Java programs given their high prevalence. To cons
 
 [Java exceptions types](https://github.com/ChatGPT4CraDiag/ChatGPT4CraDiag.github.io/blob/main/Benchmark/Java_exception_type_set_with_size.json), the 737 common Java exceptions we parse from Java libraries from Maven Central. 
 
-[100 crash bugs benchmark](https://github.com/LLM4CraSolver/LLM4CraSolver.github.io/blob/main/Benchmark/benchmark_100.json), the 100 SO threads we sample from the 67248 SO threads including 50 code-related crash bugs and 50 environment-related crash bugs.
+[100 crash bugs benchmark](https://github.com/LLM4CraSolver/LLM4CraSolver.github.io/blob/main/Benchmark/java_benchmark_100.json), the 100 SO threads we sample from the 67248 SO threads including 50 code-related crash bugs and 50 environment-related crash bugs.
 
-[41 crash bugs benchmark](https://github.com/LLM4CraSolver/LLM4CraSolver.github.io/blob/main/Benchmark/benchmark_41.json). To validate the effectiveness of our proposed approach, we create a new benchmark consisting of 41 crash bugs (including 11 code-related crash bugs and 30 environment-related crash bugs) that could not be successfully repaired in RQ1 when provided full crash description.
+[41 crash bugs benchmark](https://github.com/LLM4CraSolver/LLM4CraSolver.github.io/blob/main/Benchmark/java_benchmark_41.json). To validate the effectiveness of our proposed approach, we create a new benchmark consisting of 41 crash bugs (including 11 code-related crash bugs and 30 environment-related crash bugs) that could not be successfully repaired in RQ1 when provided full crash description.
 
+[42 crash bugs benchmark](https://github.com/LLM4CraSolver/LLM4CraSolver.github.io/blob/main/Benchmark/multi_language_benchmark_42.json)To build this multilingual dataset, we invited the same two participants from Section 5.2 to followthe data collection procedures described in Section 2.1. We collected a total of 42 environment-related crash bugsspanning Java, C/C++, and Python for further generalization evaluation (with 13 cases for java, 20 for Python, and 9 foC/C++). To further assess the effectiveness of LLMs on previously unseen data, all 42 crash bugs were sourced fromStack Overflow posts published after 2024.
 ## Result
 
 **RQ1 (Basic Prompt Effectiveness)**: To what extent can ChatGPT, utilizing basic prompts with varying levels of contextual information, accurately localize and repair both code-related and environment-related crash bugs?
@@ -24,10 +25,12 @@ The experimental result of RQ2 are listed in the paper.
 
 **RQ3 (Evaluation of IntDiagSolver)**: How effectively does IntDiagSolver perform in resolving crash bugs?
 
-– RQ3.a (Effectiveness of IntDiagSolver): To what extent can IntDiagSolver effectively resolve crash bugs?
+**RQ4 (Generalizability of IntDiagSolver)**:How well does IntDiagSolver generalize to differentscenarios?
 
-[rq3_a_result](https://github.com/ChatGPT4CraDiag/ChatGPT4CraDiag.github.io/blob/main/Result/rq3_a_result.json), the experimental results of effectiveness of IntDiagSolver on the 41 crash bugs benchmark.
+- RQ4.a (Generalizability across LLMs):To what extent can the effectiveness of IntDiagSolver in resolving crash bugs be generalized across different LLMs?
+- 
+[rq4_a_result](https://github.com/LLM4CraSolver/LLM4CraSolver.github.io/tree/main/Result/rq4_a_result), the experimental results of Generalizability across LLMs on the 41 crash bugs benchmark.
 
-– RQ3.b (Generalizability of IntDiagSolver): To what extent can the effectiveness of IntDiagSolver in crash bug resolution be generalized across different LLMs?
+- RQ4.b (Generalizability across Programming Languages):To what extent can the effectiveness of IntDiagSolver in resolving crash bugs be generalized across different programming languages?
 
-[rq3_b_result](https://github.com/ChatGPT4CraDiag/ChatGPT4CraDiag.github.io/blob/main/Result/rq3_b_result), the experimental results of generalizability of IntDiagSolver on the 41 crash bugs benchmark.
+[rq4_b_result](https://github.com/LLM4CraSolver/LLM4CraSolver.github.io/tree/main/Result/rq4_b_result), the experimental results of Generalizability across Programming Languages on the 42 crash bugs benchmark.

@@ -1,702 +1,842 @@
 [
-  {
-    "id": 77364550,
-    "title": "AttributeError: module 'pkgutil' has no attribute 'ImpImporter'. Did you mean: 'zipimporter'?",
-    "language": "python",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "2",
-      "extra_info": ""
+    {
+        "id": 77364550,
+        "title": "AttributeError: module 'pkgutil' has no attribute 'ImpImporter'. Did you mean: 'zipimporter'?",
+        "language": "python",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "2",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "1",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 77213053,
-    "title": "Why did Flask start failing with \"ImportError: cannot import name 'url_quote' from 'werkzeug.urls'\"?",
-    "language": "python",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "1",
-      "extra_info": ""
+    {
+        "id": 77213053,
+        "title": "Why did Flask start failing with \"ImportError: cannot import name 'url_quote' from 'werkzeug.urls'\"?",
+        "language": "python",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "1",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 78634235,
-    "title": "numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject",
-    "language": "python",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "1",
-      "final_solution_rounds": "1",
-      "extra_info": ""
+    {
+        "id": 78634235,
+        "title": "numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject",
+        "language": "python",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "1",
-      "final_solution_rounds": "1",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 77507580,
-    "title": "UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown plt.show()",
-    "language": "python",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "3",
-      "final_solution_rounds": "3",
-      "extra_info": ""
+    {
+        "id": 77507580,
+        "title": "UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown plt.show()",
+        "language": "python",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "3",
+            "final_solution_rounds": "3",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "0",
+            "repair": "0",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "3",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "0",
-      "repair": "0",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "3",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 77233855,
-    "title": "Why did I get an error ModuleNotFoundError: No module named 'distutils'?",
-    "language": "python",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "1",
-      "extra_info": ""
+    {
+        "id": 77233855,
+        "title": "Why did I get an error ModuleNotFoundError: No module named 'distutils'?",
+        "language": "python",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "1",
-      "final_solution_rounds": "1",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 78279136,
-    "title": "\"ImportError: cannot import name 'triu' from 'scipy.linalg'\" when importing Gensim",
-    "language": "python",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "1",
-      "extra_info": ""
+    {
+        "id": 78279136,
+        "title": "\"ImportError: cannot import name 'triu' from 'scipy.linalg'\" when importing Gensim",
+        "language": "python",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "1",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 77433096,
-    "title": "NotImplementedError: Loading a dataset cached in a LocalFileSystem is not supported",
-    "language": "python",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "4",
-      "final_solution_rounds": "1",
-      "extra_info": ""
+    {
+        "id": 77433096,
+        "title": "NotImplementedError: Loading a dataset cached in a LocalFileSystem is not supported",
+        "language": "python",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "4",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "1",
-      "final_solution_rounds": "1",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 77903321,
-    "title": "ImportError: cannot import name 'mock_s3' from 'moto'",
-    "language": "python",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "0",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "3",
-      "extra_info": ""
+    {
+        "id": 77903321,
+        "title": "ImportError: cannot import name 'mock_s3' from 'moto'",
+        "language": "python",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "0",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "3",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "1",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 79290968,
-    "title": "'super' object has no attribute '__sklearn_tags__'",
-    "language": "python",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "1",
-      "extra_info": ""
+    {
+        "id": 79290968,
+        "title": "'super' object has no attribute '__sklearn_tags__'",
+        "language": "python",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "3",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "3",
-      "final_solution_rounds": "1",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 78641150,
-    "title": "A module that was compiled using NumPy 1.x cannot be run in NumPy 2.0.0",
-    "language": "python",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "1",
-      "final_solution_rounds": "1",
-      "extra_info": ""
+    {
+        "id": 78641150,
+        "title": "A module that was compiled using NumPy 1.x cannot be run in NumPy 2.0.0",
+        "language": "python",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "1",
-      "final_solution_rounds": "1",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 78650222,
-    "title": "ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject [duplicate]",
-    "language": "python",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "1",
-      "extra_info": ""
+    {
+        "id": 78650222,
+        "title": "ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject [duplicate]",
+        "language": "python",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "1",
-      "final_solution_rounds": "1",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 77074676,
-    "title": "ImportError: cannot import name 'deprecated' from 'typing_extensions'",
-    "language": "python",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "1",
-      "extra_info": ""
+    {
+        "id": 77074676,
+        "title": "ImportError: cannot import name 'deprecated' from 'typing_extensions'",
+        "language": "python",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "1",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 78949093,
-    "title": "How to Resolve AttributeError: module 'fiona' has no attribute 'path'?",
-    "language": "python",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "1",
-      "final_solution_rounds": "1",
-      "extra_info": ""
+    {
+        "id": 78949093,
+        "title": "How to Resolve AttributeError: module 'fiona' has no attribute 'path'?",
+        "language": "python",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "3",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "3",
-      "final_solution_rounds": "1",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 78498481,
-    "title": "UserWarning: Plan failed with a cudnnException: CUDNN_BACKEND_EXECUTION_PLAN_DESCRIPTOR",
-    "language": "python",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "2",
-      "extra_info": ""
+    {
+        "id": 78498481,
+        "title": "UserWarning: Plan failed with a cudnnException: CUDNN_BACKEND_EXECUTION_PLAN_DESCRIPTOR",
+        "language": "python",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "2",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "1",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 77807142,
-    "title": "AttributeError: Calling operator \"bpy.ops.import_scene.obj\" error, could not be found",
-    "language": "python",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "3",
-      "extra_info": ""
+    {
+        "id": 77807142,
+        "title": "AttributeError: Calling operator \"bpy.ops.import_scene.obj\" error, could not be found",
+        "language": "python",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "3",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "3",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "3",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 77388920,
-    "title": "ERROR: Could not build wheels for aiohttp, which is required to install pyproject.toml-based",
-    "language": "python",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "3",
-      "final_solution_rounds": "1",
-      "extra_info": ""
+    {
+        "id": 77388920,
+        "title": "ERROR: Could not build wheels for aiohttp, which is required to install pyproject.toml-based",
+        "language": "python",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "3",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "1",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 77104125,
-    "title": "No module named 'keras.wrappers'",
-    "language": "python",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "3",
-      "final_solution_rounds": "3",
-      "extra_info": ""
+    {
+        "id": 77104125,
+        "title": "No module named 'keras.wrappers'",
+        "language": "python",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "3",
+            "final_solution_rounds": "3",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "3",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "3",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 77124879,
-    "title": "pip: 'extras_require' must be a dictionary whose values are strings or lists of strings containing valid project/version requirement specifiers",
-    "language": "python",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "2",
-      "extra_info": ""
+    {
+        "id": 77124879,
+        "title": "pip: 'extras_require' must be a dictionary whose values are strings or lists of strings containing valid project/version requirement specifiers",
+        "language": "python",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "2",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "3",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "3",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 78604018,
-    "title": "ImportError: cannot import name 'packaging' from 'pkg_resources' when trying to install causal_conv1d",
-    "language": "python",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "2",
-      "extra_info": ""
+    {
+        "id": 78604018,
+        "title": "ImportError: cannot import name 'packaging' from 'pkg_resources' when trying to install causal_conv1d",
+        "language": "python",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "2",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "2",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "2",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 77254582,
-    "title": "Why is a stray semicolon no longer detected by `-pedantic` modern compilers?",
-    "language": "C/C++",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "1",
-      "extra_info": ""
+    {
+        "id": "77969964",
+        "title": "Deprecation Warning with groupby.apply",
+        "language": "python",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "0",
+            "repair": "0",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "0",
+            "repair": "0",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "1",
-      "final_solution_rounds": "1",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 79457581,
-    "title": "`gcc -undef` leads to `cannot find entry symbol _start`; defaulting to x",
-    "language": "C/C++",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "3",
-      "final_solution_rounds": "1",
-      "extra_info": ""
+    {
+        "id": 77254582,
+        "title": "Why is a stray semicolon no longer detected by `-pedantic` modern compilers?",
+        "language": "C/C++",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "1",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 79195142,
-    "title": "Recent MSVC versions don't treat NAN as constant, workaround?",
-    "language": "C/C++",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "0",
-      "final_solution_nums": "5",
-      "final_solution_rounds": "3",
-      "extra_info": ""
+    {
+        "id": 79457581,
+        "title": "`gcc -undef` leads to `cannot find entry symbol _start`; defaulting to x",
+        "language": "C/C++",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "3",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "0",
-      "final_solution_nums": "3",
-      "final_solution_rounds": "3",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 79139347,
-    "title": "Multicast works on WSL1, but not WSL2",
-    "language": "C/C++",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "3",
-      "final_solution_rounds": "1",
-      "extra_info": ""
+    {
+        "id": 79195142,
+        "title": "Recent MSVC versions don't treat NAN as constant, workaround?",
+        "language": "C/C++",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "0",
+            "final_solution_nums": "5",
+            "final_solution_rounds": "3",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "0",
+            "final_solution_nums": "3",
+            "final_solution_rounds": "3",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "1",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 77836548,
-    "title": "library 'gfortran' not found when installing R packages",
-    "language": "C/C++",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "1",
-      "extra_info": ""
+    {
+        "id": 79139347,
+        "title": "Multicast works on WSL1, but not WSL2",
+        "language": "C/C++",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "3",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "3",
-      "final_solution_rounds": "1",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 78351290,
-    "title": "gcc is giving a warning for implicit declarition of function when header files are included",
-    "language": "C/C++",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "1",
-      "final_solution_rounds": "1",
-      "extra_info": ""
+    {
+        "id": 77836548,
+        "title": "library 'gfortran' not found when installing R packages",
+        "language": "C/C++",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "3",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "1",
-      "final_solution_rounds": "1",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 77256330,
-    "title": "java.lang.NoSuchMethodError: 'org.apache.commons.io.output.UnsynchronizedByteArrayOutputStream$Builder org.apache.poi-poi-ooxml-5.2.4",
-    "language": "java",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "1",
-      "final_solution_rounds": "1",
-      "extra_info": ""
+    {
+        "id": 78351290,
+        "title": "gcc is giving a warning for implicit declarition of function when header files are included",
+        "language": "C/C++",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "1",
-      "final_solution_rounds": "1",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 79102777,
-    "title": "How to resolve \"source value 8 is obsolete\" warning in Android Studio?",
-    "language": "java",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "1",
-      "final_solution_rounds": "1",
-      "extra_info": ""
+    {
+        "id": "79329275",
+        "title": "Why does GCC’s static analyser falsely warn that a pointer to an allocated memory block itself stored in an allocated memory block may leak?",
+        "language": "C/C++",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "0",
+            "repair": "0",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "0",
+            "repair": "0",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "1",
-      "final_solution_rounds": "1",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 77225378,
-    "title": "gradle clean fails with \"GradleException: Failed to create Jar file\"",
-    "language": "java",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "0",
-      "final_solution_nums": "11",
-      "final_solution_rounds": "3",
-      "extra_info": ""
+    {
+        "id": "77850769",
+        "title": "FATAL: ThreadSanitizer: unexpected memory mapping when running on Linux Kernels 6.6+",
+        "language": "C/C++",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "0",
+            "repair": "0",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "0",
+            "repair": "0",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "0",
-      "final_solution_nums": "10",
-      "final_solution_rounds": "3",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 79067849,
-    "title": "Flutter 3.24.3 problem with Android Studio Ladybug | 2024.2.1",
-    "language": "java",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "1",
-      "final_solution_rounds": "1",
-      "extra_info": ""
+    {
+        "id": "79701694",
+        "title": "Unexpected compiler warning - printf format specifiers",
+        "language": "C/C++",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "0",
+            "repair": "0",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "0",
+            "repair": "0",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "1",
-      "final_solution_rounds": "1",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 77545551,
-    "title": "Error \"IllegalStateException: No target Validator set\" after upgrade from Spring Boot 3.1.5 to 3.2.0",
-    "language": "java",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "3",
-      "final_solution_rounds": "2",
-      "extra_info": ""
+    {
+        "id": 77256330,
+        "title": "java.lang.NoSuchMethodError: 'org.apache.commons.io.output.UnsynchronizedByteArrayOutputStream$Builder org.apache.poi-poi-ooxml-5.2.4",
+        "language": "java",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "1",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 77830835,
-    "title": "Compilation error on List.getFirst(): cannot find symbol? [duplicate]",
-    "language": "java",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "1",
-      "extra_info": ""
+    {
+        "id": 79102777,
+        "title": "How to resolve \"source value 8 is obsolete\" warning in Android Studio?",
+        "language": "java",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "3",
-      "final_solution_rounds": "1",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 77823240,
-    "title": "Query execution errors after upgrading spring boot 3.2.0 to 3.2.1 - ORA-00933 - command not properly ended",
-    "language": "java",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "0",
-      "final_solution_nums": "8",
-      "final_solution_rounds": "3",
-      "extra_info": ""
+    {
+        "id": 77225378,
+        "title": "gradle clean fails with \"GradleException: Failed to create Jar file\"",
+        "language": "java",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "0",
+            "final_solution_nums": "11",
+            "final_solution_rounds": "3",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "0",
+            "final_solution_nums": "10",
+            "final_solution_rounds": "3",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "4",
-      "final_solution_rounds": "3",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 78578794,
-    "title": "Execution failed for task ':app:mergeExtDexDebug' As A Result of A Null Pointer Exception",
-    "language": "java",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "1",
-      "final_solution_rounds": "1",
-      "extra_info": ""
+    {
+        "id": 79067849,
+        "title": "Flutter 3.24.3 problem with Android Studio Ladybug | 2024.2.1",
+        "language": "java",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "2",
-      "final_solution_rounds": "1",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 79326623,
-    "title": "Error after updating logback to version ^1.5.13",
-    "language": "java",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "0",
-      "final_solution_nums": "8",
-      "final_solution_rounds": "3",
-      "extra_info": ""
+    {
+        "id": 77545551,
+        "title": "Error \"IllegalStateException: No target Validator set\" after upgrade from Spring Boot 3.1.5 to 3.2.0",
+        "language": "java",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "3",
+            "final_solution_rounds": "2",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "0",
-      "final_solution_nums": "7",
-      "final_solution_rounds": "3",
-      "extra_info": ""
-    }
-  },
-  {
-    "id": 77932043,
-    "title": "How to fix : [options] source value 8 is obsolete and will be removed in a future release and MainActivity.java uses or overrides a deprecated API",
-    "language": "java",
-    "type": "non-code",
-    "GPT4.1-mini": {
-      "locate": "1",
-      "repair": "0",
-      "final_solution_nums": "1",
-      "final_solution_rounds": "1",
-      "extra_info": ""
+    {
+        "id": 77830835,
+        "title": "Compilation error on List.getFirst(): cannot find symbol? [duplicate]",
+        "language": "java",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "3",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        }
     },
-    "DeepSeek-r1": {
-      "locate": "1",
-      "repair": "1",
-      "final_solution_nums": "1",
-      "final_solution_rounds": "1",
-      "extra_info": ""
+    {
+        "id": 77823240,
+        "title": "Query execution errors after upgrading spring boot 3.2.0 to 3.2.1 - ORA-00933 - command not properly ended",
+        "language": "java",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "0",
+            "final_solution_nums": "8",
+            "final_solution_rounds": "3",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "4",
+            "final_solution_rounds": "3",
+            "extra_info": ""
+        }
+    },
+    {
+        "id": 78578794,
+        "title": "Execution failed for task ':app:mergeExtDexDebug' As A Result of A Null Pointer Exception",
+        "language": "java",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        }
+    },
+    {
+        "id": 79326623,
+        "title": "Error after updating logback to version ^1.5.13",
+        "language": "java",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "0",
+            "final_solution_nums": "8",
+            "final_solution_rounds": "3",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "0",
+            "final_solution_nums": "7",
+            "final_solution_rounds": "3",
+            "extra_info": ""
+        }
+    },
+    {
+        "id": "79278490",
+        "title": "Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK",
+        "language": "java",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "0",
+            "repair": "0",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "0",
+            "repair": "0",
+            "final_solution_nums": "4",
+            "final_solution_rounds": "",
+            "extra_info": ""
+        }
+    },
+    {
+        "id": "79160929",
+        "title": "Execution failed for task ':path_provider_android:compileDebugJavaWithJavac'",
+        "language": "java",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "0",
+            "repair": "0",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "0",
+            "repair": "0",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "",
+            "extra_info": ""
+        }
+    },
+    {
+        "id": "77834788",
+        "title": "JDBC and SQLite - No suitable driver found no matter what I try",
+        "language": "java",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "0",
+            "repair": "0",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "0",
+            "repair": "0",
+            "final_solution_nums": "2",
+            "final_solution_rounds": "",
+            "extra_info": ""
+        }
+    },
+    {
+        "id": 77932043,
+        "title": "How to fix : [options] source value 8 is obsolete and will be removed in a future release and MainActivity.java uses or overrides a deprecated API",
+        "language": "java",
+        "type": "non-code",
+        "GPT4.1-mini": {
+            "locate": "1",
+            "repair": "0",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        },
+        "DeepSeek-r1": {
+            "locate": "1",
+            "repair": "1",
+            "final_solution_nums": "1",
+            "final_solution_rounds": "1",
+            "extra_info": ""
+        }
     }
-  }
 ]
