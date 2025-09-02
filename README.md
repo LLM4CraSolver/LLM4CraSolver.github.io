@@ -28,7 +28,7 @@ The experimental result of RQ2 are listed in the paper.
 **RQ4 (Generalizability of IntDiagSolver)**:How well does IntDiagSolver generalize to differentscenarios?
 
 - RQ4.a (Generalizability across LLMs):To what extent can the effectiveness of IntDiagSolver in resolving crash bugs be generalized across different LLMs?
-- 
+
 [rq4_a_result](https://github.com/LLM4CraSolver/LLM4CraSolver.github.io/tree/main/Result/rq4_a_result), the experimental results of Generalizability across LLMs on the 41 crash bugs benchmark.
 
 - RQ4.b (Generalizability across Programming Languages):To what extent can the effectiveness of IntDiagSolver in resolving crash bugs be generalized across different programming languages?
