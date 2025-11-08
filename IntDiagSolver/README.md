@@ -11,6 +11,7 @@ Based on our experimental findings, we propose IntDiagSolver, a novel approach f
 
 ## Directory Structure
 
+```bash
 /
 ├── README.md                   # Documentation for IntDiagSolver
 ├── controller.py               # Main pipeline script for IntDiagSolver
@@ -18,6 +19,7 @@ Based on our experimental findings, we propose IntDiagSolver, a novel approach f
 └── utils/                      # Utility scripts directory
     ├── data_utils.py           # Data loading and management utilities
     └── path_utils.py           # Path management utilities
+```
 
 ## Usage Steps:
 
@@ -30,5 +32,4 @@ Based on our experimental findings, we propose IntDiagSolver, a novel approach f
 - During the iterative solution generation process, the LLM may ask targeted follow-up questions. The user should respond to these questions as instructed.
 
 - Once a specific solution is generated, IntDiagSolver will automatically proceed to the validation phase. To ensure the reliability of evaluation at this stage, validation is currently performed manually. Users should determine the result as instructed (i.e, enter 0 for "incorrect," 1 for "correct," or 2 if the LLM's response is correct but "not specific enough").
-
 
